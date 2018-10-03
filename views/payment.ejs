@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Checkout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
+ </head>
+ <body>
+   <div id="dropin-container"></div>
+   <button id="submit-button">Purchase</button>
+
+
+
+   <script>
+     var submitButton = document.querySelector('#submit-button');
+     $.ajax({
+	     url: '/client_token',
+	     success: function(res){
+
+     braintree.dropin.create({
+       authorization: res,
+       selector: '#dropin-container',
+       env: 'sandbox',
+     }, function (err, dropinInstance) {
+       if (err) {
+         // Handle any errors that might've occurred when creating Drop-in
+         console.error(err);
+         return;
+       }
+       submitButton.addEventListener('click', function () {
+         dropinInstance.requestPaymentMethod(function (err, payload) {
+           if (err) {
+           }
+	   $.ajax({
+		   type: 'POST',
+		   url: '/checkout',
+		   data: {'payment_method_nonce': payload.nonce}
+	   }).done(function(result){
+	//	   dropinInstance.teardown(function(teardownErr){
+	//		   $('#submit-button').remove();
+	//	   });
+
+		   if(result.success){
+			   console.log('success');
+		   }
+		   else{
+			   console.log('error');
+		   }
+	   });
+         });
+       });
+     });
+	     }
+     });
+   </script>
+   <p>No-reload<p>
+ </body>
+</html>
