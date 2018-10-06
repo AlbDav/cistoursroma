@@ -17,8 +17,11 @@
 	}
 }
 #contact{
-	font-weight: bold;
+	> h2{
+		margin-bottom: 0.5em;
+	}
 	> div{
+		font-weight: bold;
 		display: table;
 		border-spacing: 0.5em;
 		margin:{
