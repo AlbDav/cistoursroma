@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
 					cont += `<div class="prod">
 					       		<div class="img" style="background-image: url(\'` + post['img'] + `\')"></div>
 							<div class="title">` + post['title'] + `</div>
-							<button class="butt">Read More</button>
+							<button class="butt" onClick="location.href=\'/` + post['product_id'] + `\'>Read More</button>
 						</div>`;
 				}
 				cont += '</div></div>';
