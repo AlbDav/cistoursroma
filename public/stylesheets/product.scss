@@ -18,4 +18,17 @@
 }
 #contact{
 	font-weight: bold;
+	> div{
+		display: table;
+		border-spacing: 0.5em;
+		> img{
+			height: 2em;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		> p{
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
 }
