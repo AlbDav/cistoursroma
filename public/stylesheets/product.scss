@@ -24,7 +24,10 @@
 		font-weight: bold;
 		display: table;
 		border-spacing: 0.5em;
-		margin-top: 0.5em;
+		margin:{
+			top: 0.5em;
+			left: 0;
+		}
 		> img{
 			height: 2em;
 			display: table-cell;
