@@ -7,21 +7,6 @@
 		<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		<script src="/javascripts/slideshow.js"></script>
-		<script>
-			var slide1;
-			var slide2;
-			$(function(){
-				$.ajax({url: "/home_content?num=3", success: function(res){
-					$("#row1").prepend(res);
-					slide1 = new slideShow($("#row1 .slide"), $("#row1 .intermed"));
-				}});
-				$.ajax({url: "/home_content?num=3", success: function(res){
-					$("#row2").prepend(res);
-					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
-				}});
-			});
-		</script>
 	</head>
 	<body>
 		<header>Logo</header>
@@ -35,43 +20,7 @@
 			</section>
 		</nav>
 		<main>
-			<div id="colosseo" class="parallax"></div>
-			<div class="row" id="row1">
-				<div class="slide">
-					<div class="table">
-						<div class="no_off">
-							<button class="butt">Altri tour</button>
-						</div>
-					</div>
-				</div>
-				<div class="slide_buttons">
-					<a href="javascript:slide1.previousSlide()" class="material_icon">arrow_back_ios</a>
-					<a href="javascript:slide1.showSlide(0)" class="material_icon intermed">radio_button_checked</a>
-					<a href="javascript:slide1.showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide1.showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide1.showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide1.nextSlide()" class="material_icon">arrow_forward_ios</a>
-				</div>
-			</div>
-			<div id="pizza" class="parallax"></div>
-			<div class="row" id="row2">
-				<div class="slide">
-					<div class="table">
-						<div class="no_off">
-							<button class="butt">Altri tour</button>
-						</div>
-					</div>
-				</div>
-				<div class="slide_buttons">
-					<a href="javascript:slide2.previousSlide()" class="material_icon">arrow_back_ios</a>
-					<a href="javascript:slide2.showSlide(0)" class="material_icon intermed">radio_button_checked</a>
-					<a href="javascript:slide2.showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.nextSlide()" class="material_icon">arrow_forward_ios</a>
-				</div>
-			</div>
-			<div id="fontana" class="parallax"></div>
+		<div class="parallax" style="brackground-image: <%= img %>"></div>
 		</main>
 	</body>
 </html>
