@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 				cont += '<div class="table">';
 				for(j = (i*num); j < (i*num)+parseInt(num); j++){
 					var post = posts[j];
-					cont += `<div class="off">
+					cont += `<div class="prod">
 					       		<div class="img" style="background-image: url(\'` + post['img'] + `\')"></div>
 							<div class="title">` + post['title'] + `</div>
 							<button class="butt">Read More</button>
