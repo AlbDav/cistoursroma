@@ -13,7 +13,7 @@ const pool = new Pool({
 router.get('/:id', function(req, res, next) {
 	var id = req.params.id;
 	
-	pool.query('SELECT * FROM offers WHERE offer_id = $1', [id], (err, result) => {
+	pool.query('SELECT * FROM products WHERE product_id = $1', [id], (err, result) => {
 		if(err){
 			res.send('errore');
 		}
