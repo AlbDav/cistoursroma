@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 const {Pool} = require('pg');
 const pool = new Pool({
-	user: 'postgres',
-	host: 'localhost',
-	database: 'postgres',
-	password: 'postgres',
-	port: 5432
+	user: process.env.PG_USER,
+	host: process.env.PG_HOST,
+	database: process.env.PG_DATABASE,
+	password: process.env.PG_PASS,
+	port: process.env.PG_PORT
 });
 
 /* GET home page. */
