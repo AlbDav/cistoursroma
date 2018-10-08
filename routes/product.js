@@ -18,9 +18,7 @@ router.get('/:id', function(req, res, next) {
 			res.send('errore');
 		}
 		var product = result.rows[0];
-		product.description = product.description.replace(/\n/g, '<br>');
 		res.render('product', {product});
-//		res.send(product);
 	});
 });
 
