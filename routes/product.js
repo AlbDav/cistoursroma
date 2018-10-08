@@ -19,8 +19,8 @@ router.get('/:id', function(req, res, next) {
 		}
 		var product = result.rows[0];
 		product.description = product.description.replace(/\n/g, '<br>');
-//		res.render('product', {product});
-		res.send(product);
+		res.render('product', {product});
+//		res.send(product);
 	});
 });
 
