@@ -24,6 +24,7 @@ router.get('/', function(req, res, next) {
 			while(posts.length < num){
 				num = num-1;
 			}
+			console.log(posts.length);
 			console.log(num);
 			for(i = 0; i < 3; i++){
 				if(i == 0){
