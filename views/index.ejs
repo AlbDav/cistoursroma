@@ -20,11 +20,11 @@
 					$("#row2").prepend(res);
 					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
 				}});*/
-				for(i = 1; i <= 3; i++){
+				for(i = 1; i <= 1; i++){
 					$.ajax({url: "/home_content?num=3", success: function(res){
 						var elem = "#row"+i;
 						$(elem).prepend(res);
-						//slide1 = new slideShow($("#row"+i+" .slide"), $("#row"+i+" .intermed"));
+						slide1 = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
 					}});
 					console.log(elem);
 				}
