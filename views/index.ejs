@@ -23,7 +23,7 @@
 					$.ajax({url: "/home_content?num=3", success: function(res){
 						var elem = "#row" + i;
 						$(elem).prepend(res);
-						slide[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
+						slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
 						console.log(elem);
 					}});
 				}
@@ -50,12 +50,12 @@
 					</div>
 				</div>
 				<div class="slide_buttons">
-					<a href="javascript:slide1.previousSlide()" class="material_icon">arrow_back_ios</a>
-					<a href="javascript:slide1.showSlide(0)" class="material_icon intermed">radio_button_checked</a>
-					<a href="javascript:slide1.showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide1.showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide1.showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide1.nextSlide()" class="material_icon">arrow_forward_ios</a>
+					<a href="javascript:slides[1].previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slides[1].showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slides[1].showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[1].showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[1].showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[1].nextSlide()" class="material_icon">arrow_forward_ios</a>
 				</div>
 			</div>
 			<div class="parallax" style="background-image: url('/images/colosseo_macro.jpg')"></div>
@@ -68,12 +68,12 @@
 					</div>
 				</div>
 				<div class="slide_buttons">
-					<a href="javascript:slide2.previousSlide()" class="material_icon">arrow_back_ios</a>
-					<a href="javascript:slide2.showSlide(0)" class="material_icon intermed">radio_button_checked</a>
-					<a href="javascript:slide2.showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.nextSlide()" class="material_icon">arrow_forward_ios</a>
+					<a href="javascript:slides[2].previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slides[2].showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slides[2].showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[2].showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[2].showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[2].nextSlide()" class="material_icon">arrow_forward_ios</a>
 				</div>
 			</div>
 			<div class="parallax" style="background-image: url('/images/rome_tour_macro.jpg')"></div>
@@ -86,12 +86,12 @@
 					</div>
 				</div>
 				<div class="slide_buttons">
-					<a href="javascript:slide2.previousSlide()" class="material_icon">arrow_back_ios</a>
-					<a href="javascript:slide2.showSlide(0)" class="material_icon intermed">radio_button_checked</a>
-					<a href="javascript:slide2.showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
-					<a href="javascript:slide2.nextSlide()" class="material_icon">arrow_forward_ios</a>
+					<a href="javascript:slides[3].previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slides[3].showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slides[3].showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[3].showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[3].showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[3].nextSlide()" class="material_icon">arrow_forward_ios</a>
 				</div>
 			</div>
 			<div class="parallax" style="background-image: url('/images/rome_tour_macro.jpg')"></div>
