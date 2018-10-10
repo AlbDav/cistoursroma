@@ -19,7 +19,7 @@
 					$("#row2").prepend(res);
 					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
 				}});*/
-				for(var i = 0; i < 1; i++){
+				for(var i = 0; i < 2; i++){
 					$.ajax({url: "/home_content?num=3", success: function(res){
 						console.log(i);
 						var elem = "#row" + (i+1);
