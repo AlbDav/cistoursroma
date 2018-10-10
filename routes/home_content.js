@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 	pool.query('SELECT * FROM categories WHERE category_id = $1', [cat], (err, result) => {
 		var category = result.rows[0].name;
 		cont += '<div class="slide_title">' + category + '</div>';
-		pool.query('SELECT * FROM products, products_en WHERE category = $1 AND products.product_id = products_en.product_id ORDER BY product_id', [cat], (err, result) => {
+		pool.query('SELECT * FROM products, products_en WHERE category = $1 AND products.product_id = products_en.product_id ORDER BY products.product_id', [cat], (err, result) => {
 			var posts = result.rows;
 			while(posts.length < num*3){
 				num = num-1;
