@@ -24,8 +24,6 @@ router.get('/', function(req, res, next) {
 			while(posts.length < num*3){
 				num = num-1;
 			}
-			console.log(posts.length);
-			console.log(num);
 			for(i = 0; i < 3; i++){
 				if(i == 0){
 					cont += '<div class="slide" style="display: block;">';
