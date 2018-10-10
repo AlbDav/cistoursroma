@@ -42,7 +42,7 @@
 			vertical-align: middle;
 		}
 	}
-	:first-child{
-		margin-left: -05em;
+	> *:first-child{
+		margin-left: -0.5em;
 	}
 }
