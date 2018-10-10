@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 		cont += '<div class="slide_title">' + category + '</div>';
 		pool.query('SELECT * FROM products WHERE category = $1 ORDER BY product_id', [cat], (err, result) => {
 			var posts = result.rows;
-			while(posts.length < num){
+			while(posts.length < num*3){
 				num = num-1;
 			}
 			console.log(posts.length);
