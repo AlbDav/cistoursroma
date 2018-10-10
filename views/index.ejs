@@ -21,7 +21,9 @@
 				}});*/
 				for(i = 0; i < 3; i++){
 					$.ajax({url: "/home_content?num=3", success: function(res){
+						console.log('ciao');
 						var elem = "#row" + (i+1);
+						console.log(elem);
 						$(elem).prepend(res);
 						slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
 						console.log(elem);
