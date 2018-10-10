@@ -9,8 +9,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script src="/javascripts/slideshow.js"></script>
 		<script>
-			var slide1;
-			var slide2;
+			var slides = [];
 			$(function(){
 				/*$.ajax({url: "/home_content?num=3", success: function(res){
 					$("#row1").prepend(res);
@@ -20,11 +19,11 @@
 					$("#row2").prepend(res);
 					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
 				}});*/
-				for(i = 1; i <= 1; i++){
+				for(i = 1; i <= 3; i++){
 					$.ajax({url: "/home_content?num=3", success: function(res){
-						var elem = "#row"+i;
+						var elem = "#row" + i;
 						$(elem).prepend(res);
-						slide1 = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
+						slide[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
 					}});
 					console.log(elem);
 				}
