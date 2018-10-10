@@ -12,14 +12,20 @@
 			var slide1;
 			var slide2;
 			$(function(){
-				$.ajax({url: "/home_content?num=3", success: function(res){
+				/*$.ajax({url: "/home_content?num=3", success: function(res){
 					$("#row1").prepend(res);
 					slide1 = new slideShow($("#row1 .slide"), $("#row1 .intermed"));
 				}});
 				$.ajax({url: "/home_content?num=3", success: function(res){
 					$("#row2").prepend(res);
 					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
-				}});
+				}});*/
+				for(i = 1; i <= 3; i++){
+					$.ajax({url: "/home_content?num=3", success: function(res){
+						$("#row"+i).prepend(res);
+						slide1 = new slideShow($("#row"+i+" .slide"), $("#row"+i+" .intermed"));
+					}});
+				}
 			});
 		</script>
 	</head>
@@ -28,13 +34,12 @@
 			<img src="/icons/icon.jpg">
 			<section id="buttons">
 				<button>Home</button>
-				<button>Home</button>
-				<button>Home</button>
-				<button>Home</button>
+				<button>Categories</button>
+				<button>Contact Us</button>
 			</section>
 		</nav>
 		<main>
-			<div id="colosseo" class="parallax"></div>
+			<div class="parallax" style="background-image: url('/images/vaticano_macro.jpg')"></div>
 			<div class="row" id="row1">
 				<div class="slide">
 					<div class="table">
@@ -52,7 +57,7 @@
 					<a href="javascript:slide1.nextSlide()" class="material_icon">arrow_forward_ios</a>
 				</div>
 			</div>
-			<div id="pizza" class="parallax"></div>
+			<div class="parallax" style="background-image: url('/images/colosseo_macro.jpg')"></div>
 			<div class="row" id="row2">
 				<div class="slide">
 					<div class="table">
@@ -70,7 +75,25 @@
 					<a href="javascript:slide2.nextSlide()" class="material_icon">arrow_forward_ios</a>
 				</div>
 			</div>
-			<div id="fontana" class="parallax"></div>
+			<div class="parallax" style="background-image: url('/images/rome_tour_macro.jpg')"></div>
+			<div class="row" id="row3">
+				<div class="slide">
+					<div class="table">
+						<div class="no_prod">
+							<button class="butt">Altri tour</button>
+						</div>
+					</div>
+				</div>
+				<div class="slide_buttons">
+					<a href="javascript:slide2.previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slide2.showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slide2.showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slide2.showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slide2.showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slide2.nextSlide()" class="material_icon">arrow_forward_ios</a>
+				</div>
+			</div>
+			<div class="parallax" style="background-image: url('/images/rome_tour_macro.jpg')"></div>
 		</main>
 	</body>
 </html>
