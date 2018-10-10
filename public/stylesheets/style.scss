@@ -2,11 +2,11 @@ html, body{
 	height: 100%;
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
-	font-size: 20px;
-	line-height: 30px;
 }
 body{
 	background-color: rgba(128, 128, 128, 0.1);
+	font-size: 20px;
+	line-height: 25px;
 	*{
 		margin: 0 auto;
 	}
@@ -137,7 +137,7 @@ main{
 .butt{
 	background-color: rgba(29, 29, 29, 1);
 	color: #ffc000;
-	padding: 1em;
+	padding: 0.6em;
 	border: none;
 	border-radius: 5px;
 }
