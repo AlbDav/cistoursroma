@@ -16,10 +16,10 @@ router.get('/', function(req, res, next) {
 	var cat = req.query.cat;
 	var cont = '';
 	
-	pool.query('SELECT * FROM categories WHERE category_id = $1', cat, (err, result) => {
+	pool.query('SELECT * FROM categories WHERE category_id = $1', [cat], (err, result) => {
 		var category = result.rows[0].name;
 		cont += '<div class="slide_title">' + category + '</div>';
-		pool.query('SELECT * FROM products WHERE category = $1 ORDER BY product_id', cat, (err, result) => {
+		pool.query('SELECT * FROM products WHERE category = $1 ORDER BY product_id', [cat], (err, result) => {
 			var posts = result.rows;
 			for(i = 0; i < 3; i++){
 				if(i == 0){
