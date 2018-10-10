@@ -10,7 +10,6 @@
 		<script src="/javascripts/slideshow.js"></script>
 		<script>
 			var slides = [];
-			var elems = [];
 			$(function(){
 				/*$.ajax({url: "/home_content?num=3", success: function(res){
 					$("#row1").prepend(res);
@@ -25,7 +24,7 @@
 					}});
 					console.log(i);
 					var elem = "#row" + (i+1);
-					$(elem[i]).prepend(res);
+					$(elem).prepend(res);
 					slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
 
 				}
