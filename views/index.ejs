@@ -22,10 +22,11 @@
 				}});*/
 				for(i = 1; i <= 3; i++){
 					$.ajax({url: "/home_content?num=3", success: function(res){
-						$("#row"+i).prepend(res);
+						var elem = "#row"+i;
+						$(elem).prepend(res);
 						//slide1 = new slideShow($("#row"+i+" .slide"), $("#row"+i+" .intermed"));
 					}});
-					console.log("#row"+i);
+					console.log(elem);
 				}
 			});
 		</script>
