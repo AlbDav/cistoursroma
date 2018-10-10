@@ -29,6 +29,7 @@
 		font-weight: bold;
 		display: table;
 		border-spacing: 0.5em;
+		margin-left: 0;
 		> img{
 			height: 2em;
 			display: table-cell;
@@ -42,5 +43,6 @@
 	> *:first-child{
 		margin-left: -0.5em;
 		font-size: 1.3em;
+		font-weight: normal;
 	}
 }
