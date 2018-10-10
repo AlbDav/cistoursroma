@@ -10,6 +10,7 @@
 		<script src="/javascripts/slideshow.js"></script>
 		<script>
 			var slides = [];
+			var elems = [];
 			$(function(){
 				/*$.ajax({url: "/home_content?num=3", success: function(res){
 					$("#row1").prepend(res);
@@ -20,14 +21,13 @@
 					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
 				}});*/
 				for(var i = 0; i < 2; i++){
-					$.ajax({url: "/home_content?num=3", success: function(res){
-						console.log(i);
-						var elem = "#row" + (i+1);
-						console.log(elem);
-						$(elem).prepend(res);
-						slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
-						console.log(elem);
+					$.ajax({async: false, url: "/home_content?num=3", success: function(res){
 					}});
+					console.log(i);
+					var elem = "#row" + (i+1);
+					$(elem[i])=.prepend(res);
+					slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
+
 				}
 			});
 		</script>
