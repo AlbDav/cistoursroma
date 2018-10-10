@@ -25,7 +25,7 @@
 					}});
 					console.log(i);
 					var elem = "#row" + (i+1);
-					$(elem[i])=.prepend(res);
+					$(elem[i]).prepend(res);
 					slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
 
 				}
