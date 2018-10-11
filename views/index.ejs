@@ -11,7 +11,6 @@
 		<script src="/javascripts/slideshow.js"></script>
 		<script>
 			var slides = [];
-			var ajaxUrl = "/home_content?num=3";
 			$(function(){
 				/*$.ajax({url: "/home_content?num=3", success: function(res){
 					$("#row1").prepend(res);
@@ -21,8 +20,15 @@
 					$("#row2").prepend(res);
 					slide2 = new slideShow($("#row2 .slide"), $("#row2 .intermed"));
 				}});*/
+				var ajaxUrl = "/home_content?num=3";
+				if(($window).width() < 640){
+					ajaxUrlPart = "/home_content?num=1";
+				}
+				if(($window).width() < 1024){
+					ajaxUrlPart = "/home_content?num=2";
+				}
 				for(var i = 0; i < 3; i++){
-					var ajaxUrlCat = ajaxUrl + "&cat=" + (i+1);
+					var ajaxUrl = ajaxUrlPart + "&cat=" + (i+1);
 					var res = $.ajax({async: false, url: ajaxUrlCat});
 					var elem = "#row" + (i+1);
 					$(elem).prepend(res.responseText);
