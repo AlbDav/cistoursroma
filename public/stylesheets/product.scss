@@ -9,7 +9,7 @@
 	position: relative;
 	z-index: 2;
 	> * {
-		width: 50em;
+		width: 60%;
 	}
 	color: #1d1d1d;
 }
@@ -50,7 +50,7 @@
 @media screen and (max-width: 1000px){
 	#cont{
 		> * {
-			width: 25em;
+			width: 90%;
 		}
 	}
 }

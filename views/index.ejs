@@ -27,7 +27,7 @@
 				if($(window).width() < 640){
 					ajaxUrlPart = "/home_content?num=1";
 				}
-				for(var i = 0; i < 3; i++){
+				for(var i = 0; i < 5; i++){
 					var ajaxUrl = ajaxUrlPart + "&cat=" + (i+1);
 					var res = $.ajax({async: false, url: ajaxUrl});
 					var elem = "#row" + (i+1);
@@ -102,7 +102,43 @@
 					<a href="javascript:slides[2].nextSlide()" class="material_icon">arrow_forward_ios</a>
 				</div>
 			</div>
-			<div class="parallax" style="background-image: url('/images/rome_tour_macro.jpg')"></div>
+			<div class="parallax" style="background-image: url('/images/mercedes_macro.jpg')"></div>
+			<div class="row" id="row3">
+				<div class="slide">
+					<div class="table">
+						<div class="no_prod">
+							<button class="butt">Altri tour</button>
+						</div>
+					</div>
+				</div>
+				<div class="slide_buttons">
+					<a href="javascript:slides[3].previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slides[3].showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slides[3].showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[3].showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[3].showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[3].nextSlide()" class="material_icon">arrow_forward_ios</a>
+				</div>
+			</div>
+			<div class="parallax" style="background-image: url('/images/segway_macro.jpg')"></div>
+			<div class="row" id="row3">
+				<div class="slide">
+					<div class="table">
+						<div class="no_prod">
+							<button class="butt">Altri tour</button>
+						</div>
+					</div>
+				</div>
+				<div class="slide_buttons">
+					<a href="javascript:slides[4].previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slides[4].showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slides[4].showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[4].showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[4].showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[4].nextSlide()" class="material_icon">arrow_forward_ios</a>
+				</div>
+			</div>
+			<div class="parallax" style="background-image: url('/images/dinner_macro.jpg')"></div>
 		</main>
 	</body>
 </html>
