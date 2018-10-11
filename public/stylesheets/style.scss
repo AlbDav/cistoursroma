@@ -149,10 +149,11 @@ main{
 			left: 1em;
 			right: 1em;
 		}
-		:first-child, :last-child{
-			font-size: 2em;
-		}
 	}
+	:first-child, :last-child{
+		font-size: 2em;
+	}
+
 }
 .material_icon{
 	font-family: "Material Icons";
