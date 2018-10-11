@@ -29,7 +29,7 @@
 				}
 				for(var i = 0; i < 3; i++){
 					var ajaxUrl = ajaxUrlPart + "&cat=" + (i+1);
-					var res = $.ajax({async: false, url: ajaxUrlCat});
+					var res = $.ajax({async: false, url: ajaxUrl});
 					var elem = "#row" + (i+1);
 					$(elem).prepend(res.responseText);
 					slides[i] = new slideShow($(elem + " .slide"), $(elem + " .intermed"));
