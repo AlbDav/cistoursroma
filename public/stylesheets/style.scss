@@ -137,13 +137,20 @@ main{
 	width: 100%;
 	text-align: center;
 	margin-top: 1em;
+	display: table;
+	table-layout: fixed;
 	a{
 		text-decoration: none;
 		color: rgba(29, 29, 29, 1);
-		font-size: 2em;
+		font-size: 1.5em;
+		display: table-cell;
+		vertical-align: middle;
 		margin: {
 			left: 1em;
 			right: 1em;
+		}
+		:first-child, :last-child{
+			font-size: 2em;
 		}
 	}
 }
