@@ -18,8 +18,12 @@ router.get('/:id', function(req, res, next) {
 			res.send('errore');
 		}
 		var product = result.rows[0];
-		var includes = ['ciao', 'ciao', 'ciao'];
-		res.render('product', {product, includes});
+		var includes = [];
+		var hours = [];
+		var days = [];
+		var duration = [];
+		//res.render('product', {product, includes});
+		res.send(product);
 	});
 });
 
