@@ -22,7 +22,7 @@ router.get('/:id', function(req, res, next) {
 		var hours = [];
 		var days = [];
 		if(product.included != null){
-			includes = product.includes.split(";");
+			includes = product.included.split(";");
 		}
 		if(product.hours != null){
 			hours = product.hours.split(";");
