@@ -21,9 +21,16 @@ router.get('/:id', function(req, res, next) {
 		var includes = [];
 		var hours = [];
 		var days = [];
-		var duration = [];
-		//res.render('product', {product, includes});
-		res.send(product);
+		if(product.included != null){
+			includes = product.includes.split(";");
+		}
+		if(product.hours != null){
+			hours = product.hours.split(";");
+		}
+		if(product.days != null){
+			days = product.days.split(";");
+		}
+		res.render('product', {product, includes, hours, days});
 	});
 });
 

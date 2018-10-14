@@ -25,17 +25,29 @@
 				<div id="info">
 					<div id="left">
 						<% if(includes.length > 0){ %>
-							<div>Contact us:</div>
+							<div>Tour includes:</div>
 							<% for(i = 0; i < includes.length; i++){ %>
 							<div><i class="material-icons">check_circle_outline</i><p><%= includes[i] %></p></div>
 							<% } %>
 						<% } %>
 					</div>
 					<div id="right">
-						<div>Contact us:</div>
-						<div><i class="material-icons">check_circle_outline</i><p>00393203832794</p></div>
-						<div><i class="material-icons">check_circle_outline</i><p>00393270697329</p></div>
-						<div><i class="material-icons">check_circle_outline</i><p>cistour2018@gmail.com</p></div>
+						<% if(product.duration != null){ %>
+							<div>Duration:</div>
+							<div><i class="material-icons">schedule</i><p><%= product.duration %></p></div>
+						<% } %>
+						<% if(hours.length > 0){ %>
+							<div>Hours:</div>
+							<% for(i = 0; i < includes.length; i++){ %>
+							<div><i class="material-icons">event</i><p><%= days[i] %></p></div>
+							<% } %>
+						<% } %>
+						<% if(days.length > 0){ %>
+							<div>Days:</div>
+							<% for(i = 0; i < days.length; i++){ %>
+							<div><i class="material-icons">event</i><p><%= days[i] %></p></div>
+							<% } %>
+						<% } %>
 					</div>
 				</div>
 				<button onClick="$('html, body').animate({scrollTop: $('#book').offset().top}, 1000);">Book Now</button>
