@@ -30,28 +30,32 @@
 #description{
 	white-space: pre-wrap;
 }
-#contact{
+#info{
+	display: table;
+	border-spacing: 0em;
 	> div{
-		font-weight: bold;
-		display: table;
-		border-spacing: 0.5em;
-		margin-left: 0em;
-		> i{
-			font-size: 1.5em;
-			display: table-cell;
-			vertical-align: middle;
+		display: table-cell;
+		> div{
+			font-weight: bold;
+			display: table;
+			border-spacing: 0.5em;
+			margin-left: 0em;
+			> i{
+				font-size: 1.5em;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			> p{
+				display: table-cell;
+				vertical-align: middle;
+			}
 		}
-		> p{
-			display: table-cell;
-			vertical-align: middle;
+		> *:first-child{
+			border-spacing: 0em;
+			font-size: 1.3em;
+			font-weight: normal;
 		}
 	}
-	> *:first-child{
-		border-spacing: 0em;
-		font-size: 1.3em;
-		font-weight: normal;
-	}
-}
 @media screen and (max-width: 640px){
 	#cont{
 		> * {
