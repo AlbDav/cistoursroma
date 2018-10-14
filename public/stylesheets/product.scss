@@ -66,4 +66,10 @@
 			width: 60%;
 		}
 	}
+	#info{
+		display: block;
+		> div{
+			display: block;
+		}
+	}
 }
