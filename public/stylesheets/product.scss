@@ -35,7 +35,7 @@
 		font-weight: bold;
 		display: table;
 		border-spacing: 0.5em;
-		margin-left: 0.5em;
+		margin-left: 0em;
 		> i{
 			font-size: 1.5em;
 			display: table-cell;
@@ -52,10 +52,13 @@
 		font-weight: normal;
 	}
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 640px){
 	#cont{
 		> * {
 			width: 90%;
+		}
+		> button{
+			width: 60%;
 		}
 	}
 }
