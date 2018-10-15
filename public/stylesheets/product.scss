@@ -77,12 +77,11 @@
 	color: #ffc000;
 	border-radius: 3px;
 }
-.ui-datepicker-header{
-	display: table;
+.ui-datepicker-prev{
+	float: left;
 }
-.ui-datepicker-prev, .ui-datepicker-next, .ui-datepicker-title{
-	display: table-cell;
-	vertical-align: middle;
+.ui-datepicker-next{
+	float: right;
 }
 .ui-datepicker-calendar{
 	> tbody td{
