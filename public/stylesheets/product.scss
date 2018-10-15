@@ -87,10 +87,10 @@
 .ui-datepicker-calendar{
 	> tbody td{
 		border-radius: 3px;
+		background-color: rgba(39, 39, 39, 1);
 		> a{
 			text-decoration: none;
 			color: #ffc000;
-			background-color: rgba(39, 39, 39, 1);
 		}
 	}
 }
