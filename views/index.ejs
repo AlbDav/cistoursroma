@@ -27,7 +27,7 @@
 				if($(window).width() < 640){
 					ajaxUrlPart = "/home_content?num=1";
 				}
-				for(var i = 0; i < 5; i++){
+				for(var i = 0; i < 6; i++){
 					var ajaxUrl = ajaxUrlPart + "&cat=" + (i+1);
 					var res = $.ajax({async: false, url: ajaxUrl});
 					var elem = "#row" + (i+1);
@@ -139,6 +139,23 @@
 				</div>
 			</div>
 			<div class="parallax" style="background-image: url('/images/dinner_macro.jpg')"></div>
+			<div class="row" id="row6">
+				<div class="slide">
+					<div class="table">
+						<div class="no_prod">
+							<button class="butt">Altri tour</button>
+						</div>
+					</div>
+				</div>
+				<div class="slide_buttons">
+					<a href="javascript:slides[5].previousSlide()" class="material_icon">arrow_back_ios</a>
+					<a href="javascript:slides[5].showSlide(0)" class="material_icon intermed">radio_button_checked</a>
+					<a href="javascript:slides[5].showSlide(1)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[5].showSlide(2)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[5].showSlide(3)" class="material_icon intermed">radio_button_unchecked</a>
+					<a href="javascript:slides[5].nextSlide()" class="material_icon">arrow_forward_ios</a>
+				</div>
+			</div>
 		</main>
 	</body>
 </html>
