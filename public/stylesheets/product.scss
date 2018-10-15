@@ -75,6 +75,7 @@
 .ui-datepicker{
 	background-color: rgba( 29, 29, 29, 1);
 	color: #ffc000;
+	border-radius: 3px;
 }
 .ui-datepicker-header{
 	display: table;
@@ -86,7 +87,10 @@
 .ui-datepicker-calendar{
 	> tbody td{
 		text-decoration: none;
-		color: #ffc000;
-		background-color: rgba(39, 39, 39, 1);
+		border-radius: 3px;
+		> a{
+			color: #ffc000;
+			background-color: rgba(39, 39, 39, 1);
+		}
 	}
 }
