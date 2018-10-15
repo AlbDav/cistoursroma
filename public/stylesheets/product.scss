@@ -79,12 +79,15 @@
 }
 .ui-datepicker-header{
 	text-align: center;
+	padding-top: 0.3em;
 }
 .ui-datepicker-prev{
 	float: left;
+	padding-left: 0.3em;
 }
 .ui-datepicker-next{
 	float: right;
+	padding-right: 0.3em;
 }
 .ui-datepicker-calendar{
 	> tbody td{
