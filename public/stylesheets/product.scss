@@ -31,11 +31,11 @@
 }
 #info{
 	display: table;
+	table-layout: fixed;
 	border-spacing: 0em;
 	> div{
 		display: table-cell;
 		> div{
-			font-weight: bold;
 			display: table;
 			border-spacing: 0.5em;
 			margin-left: 0em;
@@ -49,10 +49,9 @@
 				vertical-align: middle;
 			}
 		}
-		> *:first-child{
+		> .highlights{
 			border-spacing: 0em;
 			font-size: 1.3em;
-			font-weight: normal;
 		}
 	}
 }
