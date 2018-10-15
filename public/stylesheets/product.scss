@@ -72,3 +72,14 @@
 		}
 	}
 }
+.ui-datepicker{
+	background-color: rgba( 29, 29, 29, 1);
+	color: #ffc000;
+}
+.ui-datepicker-header{
+	display: table;
+}
+.ui-datepicker-prev, .ui-datepicker-next, .ui-datepicker-title{
+	display: table-cell;
+	vertical-align: middle;
+}
