@@ -83,3 +83,10 @@
 	display: table-cell;
 	vertical-align: middle;
 }
+.ui-datepicker-calendar{
+	> tbody td{
+		text-decoration: none;
+		color: #ffc000;
+		background-color: rgba(39, 39, 39, 1);
+	}
+}
