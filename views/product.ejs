@@ -32,7 +32,7 @@
 						<% if(hours.length > 0){ %>
 							<div class="highlights">Hours:</div>
 							<% for(i = 0; i < includes.length; i++){ %>
-							<div><i class="material-icons">event</i><p><%= hours[i] %></p></div>
+							<div><i class="material-icons">schedule</i><p><%= hours[i] %></p></div>
 							<% } %>
 						<% } %>
 						<% if(days.length > 0){ %>
@@ -50,7 +50,6 @@
 							<% } %>
 						<% } %>
 					</div>
-
 				</div>
 				<button onClick="$('html, body').animate({scrollTop: $('#book').offset().top}, 1000);">Book Now</button>
 				<div>
