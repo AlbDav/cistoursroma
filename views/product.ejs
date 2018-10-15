@@ -11,7 +11,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script>
 			$(function){
-				$("book").datepicker();
+				$("#date").datepicker();
 			}
 		</script>
 	</head>
@@ -29,38 +29,44 @@
 			<div id="cont">
 				<div id="title"><%= product.title %></div>
 				<div id="info">
-					<div id="left">
-						<% if(product.duration != null){ %>
-							<div class="highlights">Duration:</div>
-							<div><i class="material-icons">schedule</i><p><%= product.duration %></p></div>
-						<% } %>
-						<% if(hours.length > 0){ %>
-							<div class="highlights">Hours:</div>
-							<% for(i = 0; i < includes.length; i++){ %>
-							<div><i class="material-icons">schedule</i><p><%= hours[i] %></p></div>
+					<% if(product.duration != null || hours.length > 0 || days.length > 0){ %>
+						<div id="left">
+							<% if(product.duration != null){ %>
+								<div class="highlights">Duration:</div>
+								<div><i class="material-icons">schedule</i><p><%= product.duration %></p></div>
 							<% } %>
-						<% } %>
-						<% if(days.length > 0){ %>
-							<div class="highlights">Days:</div>
-							<% for(i = 0; i < days.length; i++){ %>
-							<div><i class="material-icons">event</i><p><%= days[i] %></p></div>
+							<% if(hours.length > 0){ %>
+								<div class="highlights">Hours:</div>
+								<% for(i = 0; i < includes.length; i++){ %>
+								<div><i class="material-icons">schedule</i><p><%= hours[i] %></p></div>
+								<% } %>
 							<% } %>
-						<% } %>
-					</div>
-					<div id="right">
-						<% if(includes.length > 0){ %>
-							<div class="highlights">Tour includes:</div>
-							<% for(i = 0; i < includes.length; i++){ %>
-							<div><i class="material-icons">check_circle_outline</i><p><%= includes[i] %></p></div>
+							<% if(days.length > 0){ %>
+								<div class="highlights">Days:</div>
+								<% for(i = 0; i < days.length; i++){ %>
+								<div><i class="material-icons">event</i><p><%= days[i] %></p></div>
+								<% } %>
 							<% } %>
-						<% } %>
-					</div>
+						</div>
+					<% } %>
+					<% if(includes.length > 0){ %>
+						<div id="right">
+							<% if(includes.length > 0){ %>
+								<div class="highlights">Tour includes:</div>
+								<% for(i = 0; i < includes.length; i++){ %>
+								<div><i class="material-icons">check_circle_outline</i><p><%= includes[i] %></p></div>
+								<% } %>
+							<% } %>
+						</div>
+					<% } %>
 				</div>
 				<button onClick="$('html, body').animate({scrollTop: $('#book').offset().top}, 1000);">Book Now</button>
 				<div>
 					<div id="description"><%= product.description %></div>
 				</div>
-				<input type="text" id="book">
+				<div id="book">
+					<input type="text" id="date">
+				</div>
 			</div>
 		</main>
 	</body>
