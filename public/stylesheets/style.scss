@@ -130,7 +130,7 @@ main{
 }
 .price{
 	display: table;
-	border-spacing: 0.3em;
+	border-spacing: 0.4em;
 	> *:last-child{
 		font-size: 2em;
 		color: green;
@@ -188,7 +188,7 @@ main{
 	}
 	.price{
 		> *:first-child{
-			font-size: 1em;
+			font-size: 0.8em;
 		}
 	}
 }
