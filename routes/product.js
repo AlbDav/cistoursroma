@@ -30,7 +30,7 @@ router.get('/:id', function(req, res, next) {
 		if(product.days != null){
 			days = product.days.split(";");
 		}
-		pool.query('SELECT * FROM prices WHER product_id = $1 order by option_num', [id], (err, result) => {
+		pool.query('SELECT * FROM prices WHERE product_id = $1 ORDER BY option_num', [id], (err, result) => {
 			if(err){
 				res.send('errore');
 			}
