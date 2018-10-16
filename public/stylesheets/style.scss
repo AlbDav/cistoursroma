@@ -183,4 +183,12 @@ main{
 	.parallax{
 		height: 35%;
 	}
+	.title{
+		font-size: 1em;
+	}
+	.price{
+		> *:first-child{
+			font-size: 0.7em;
+		}
+	}
 }
