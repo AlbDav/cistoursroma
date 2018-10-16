@@ -35,7 +35,8 @@ router.get('/:id', function(req, res, next) {
 				res.send('errore');
 			}
 			var prices = result;
-			res.render('product', {product, prices, includes, hours, days});
+			res.send(prices);
+			//res.render('product', {product, prices, includes, hours, days});
 		});
 	});
 });
