@@ -120,10 +120,26 @@ main{
 	width: 100%;
 }
 .title{
-	margin: 1em;
+	margin:{
+		top: 1em;
+		bottom: 0.3em;
+		left: 1em;
+		right: 1em;
+	}
 }
 .price{
-	margin: 0 1em;
+	display: table;
+	> *:first-child{
+		font-size: 0.7em;
+	}
+	> *:last-child{
+		font-size: 1.3em;
+		color: green;
+	}
+	> *{
+		display: table-cell;
+		vertical-align: bottom;
+	}
 }
 .butt{
 	background-color: rgba(29, 29, 29, 1);
