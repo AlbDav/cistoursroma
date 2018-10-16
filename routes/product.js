@@ -19,16 +19,28 @@ router.get('/:id', function(req, res, next) {
 		}
 		var product = result.rows[0];
 		var includes = [];
-		var hours = [];
-		var days = [];
+		var hours = '';
+		var days = '';
 		if(product.included != null){
 			includes = product.included.split(";");
 		}
 		if(product.hours != null){
-			hours = product.hours.split(";");
+			hoursArray = product.hours.split(";");
+			for(i = 0; i < hoursArray.length; i++){
+				days += hoursArray[i];
+				if(i < hoursArray.length-1){
+					days += ', ';
+				}
+			}
 		}
 		if(product.days != null){
-			days = product.days.split(";");
+			var daysArray = product.days.split(";");
+			for(i = 0; i < daysArray.length; i++){
+				days += daysArray[i];
+				if(i < daysArray.length-1){
+					days += ', ';
+				}
+			}
 		}
 		pool.query('SELECT * FROM prices WHERE product_id = $1 ORDER BY option_num', [id], (err, result) => {
 			if(err){

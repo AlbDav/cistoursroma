@@ -40,15 +40,11 @@
 							<% } %>
 							<% if(hours.length > 0){ %>
 								<div class="highlights">Hours:</div>
-								<% for(i = 0; i < includes.length; i++){ %>
-								<div><i class="material-icons">schedule</i><p><%= hours[i] %></p></div>
-								<% } %>
+								<div><i class="material-icons">schedule</i><p><%= hours %></p></div>
 							<% } %>
 							<% if(days.length > 0){ %>
 								<div class="highlights">Days:</div>
-								<% for(i = 0; i < days.length; i++){ %>
-								<div><i class="material-icons">event</i><p><%= days[i] %></p></div>
-								<% } %>
+								<div><i class="material-icons">event</i><p><%= days %></p></div>
 							<% } %>
 						</div>
 					<% } %>
