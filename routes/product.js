@@ -34,7 +34,7 @@ router.get('/:id', function(req, res, next) {
 			if(err){
 				res.send('errore');
 			}
-			var prices = result;
+			var prices = result.rows;
 			res.send(prices);
 			//res.render('product', {product, prices, includes, hours, days});
 		});
