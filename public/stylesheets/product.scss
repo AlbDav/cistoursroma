@@ -24,7 +24,6 @@
 #title{
 	text-align: center;
 	font-size: 1.7em;
-	margin-bottom: 0.3em;
 }
 #description{
 	white-space: pre-wrap;
@@ -114,6 +113,9 @@
 		> div{
 			display: block;
 		}
+	}
+	#title{
+		font-size: 1.5em;
 	}
 	#standard_price{
 		.price{
