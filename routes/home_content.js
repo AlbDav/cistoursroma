@@ -36,13 +36,16 @@ router.get('/', function(req, res, next) {
 					var post = posts[j];
 					cont += `<div class="prod">
 					       		<div class="img" style="background-image: url(\'` + post['img'] + `\')"></div>
-							<div class="title">` + post['title'] + `</div>
-							<button class="butt" onClick="location.href=\'/product/` + post['product_id'] + `\'">Read More</button>
+							<div class="title">` + post['title'] + `</div>`;
+							if(post[price] != null){
+								cont += `<div class="price"><p>Prezzo Standard</p><p>` + post['price'] + `</p></div>`;
+							}
+							cont += `<button class="butt" onClick="location.href=\'/product/` + post['product_id'] + `\'">Read More</button>
 						</div>`;
 				}
 				cont += '</div></div>';
 			}
-			res.send(posts);
+			res.send(cont);
 		});
 	});
 
