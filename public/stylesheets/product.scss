@@ -115,4 +115,10 @@
 			display: block;
 		}
 	}
+	#standard_price{
+		.price{
+			> *:first-child{
+				font-size: 1em;
+			}
+		}
 }
