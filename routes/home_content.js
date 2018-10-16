@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
 				}
 				cont += '</div></div>';
 			}
-			res.send(cont);
+			res.send(posts);
 		});
 	});
 
