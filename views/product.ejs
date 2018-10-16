@@ -28,7 +28,9 @@
 			<div class="parallax" style="background-image: url('<%= product.img %>')"></div>
 			<div id="cont">
 				<div id="title"><%= product.title %></div>
-				<div id="price"><p>Prezzo standard:</p><p><%= prices[0].price %></p></div>
+				<div id="standard_price">
+					<div class="price"><p>Prezzo standard:</p><p><%= prices[0].price %>&euro;</p></div>
+				</div>
 				<div id="info">
 					<% if(product.duration != null || hours.length > 0 || days.length > 0){ %>
 						<div id="left">
