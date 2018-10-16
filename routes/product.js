@@ -30,7 +30,13 @@ router.get('/:id', function(req, res, next) {
 		if(product.days != null){
 			days = product.days.split(";");
 		}
-		res.render('product', {product, includes, hours, days});
+		pool.query('SELECT * FROM prices WHER product_id = $1 order by option_num', [id], (err, result) => {
+			if(err){
+				res.send('errore');
+			}
+			var prices = result;
+			res.render('product', {product, prices, includes, hours, days});
+		});
 	});
 });
 
