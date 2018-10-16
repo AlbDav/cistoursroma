@@ -129,12 +129,12 @@ main{
 }
 .price{
 	display: table;
-	border-spacing: 0.3em;
+	border-spacing: 0.4em;
 	> *:first-child{
-		font-size: 0.7em;
+		font-size: 0.8em;
 	}
 	> *:last-child{
-		font-size: 1.3em;
+		font-size: 1.5em;
 		color: green;
 	}
 	> *{
