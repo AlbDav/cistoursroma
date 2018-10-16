@@ -122,7 +122,7 @@ main{
 .title{
 	margin:{
 		top: 1em;
-		bottom: 0.3em;
+		bottom: 0;
 		left: 1em;
 		right: 1em;
 	}
@@ -138,7 +138,7 @@ main{
 	}
 	> *{
 		display: table-cell;
-		vertical-align: bottom;
+		vertical-align: text-bottom;
 	}
 }
 .butt{
