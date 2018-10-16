@@ -131,6 +131,7 @@ main{
 .price{
 	display: table;
 	border-spacing: 0.4em;
+	margin-top: -0.4em;
 	> *:last-child{
 		font-size: 2em;
 		color: green;
@@ -189,6 +190,12 @@ main{
 	.price{
 		> *:first-child{
 			font-size: 0.8em;
+		}
+		> *:last-child{
+			font-size: 1.8em;
+		}
+		> *{
+			vertical-align: middle;
 		}
 	}
 }
