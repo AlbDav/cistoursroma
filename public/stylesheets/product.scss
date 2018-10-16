@@ -56,22 +56,6 @@
 		}
 	}
 }
-@media screen and (max-width: 640px){
-	#cont{
-		> * {
-			width: 90%;
-		}
-		> button{
-			width: 60%;
-		}
-	}
-	#info{
-		display: block;
-		> div{
-			display: block;
-		}
-	}
-}
 .ui-datepicker{
 	background-color: rgba( 29, 29, 29, 1);
 	color: #ffc000;
@@ -99,6 +83,36 @@
 		> a{
 			text-decoration: none;
 			color: #ffc000;
+		}
+	}
+}
+#standard_price{
+	.price{
+		> *:first-child{
+			font-size: 1.3em;
+		}
+		> *:last-child{
+			font-size: 2.5em;
+		}
+		> *{
+			vertical-align: middle;
+		}
+	}
+}
+
+@media screen and (max-width: 640px){
+	#cont{
+		> * {
+			width: 90%;
+		}
+		> button{
+			width: 60%;
+		}
+	}
+	#info{
+		display: block;
+		> div{
+			display: block;
 		}
 	}
 }
