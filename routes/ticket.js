@@ -22,8 +22,11 @@ router.get('/', function(req, res, next) {
 					}
 					else{
 						console.log(resultpdf);
-						res.contentType('application/pdf');
-						res.send(resultpdf);
+						res.writeHead(200, {
+							'Content-Type': 'application/pdf',
+							'Content-Disposition': 'attachment; filename=' + resultpdf
+						});
+						res.end(resultpdf);
 					}
 				});
 			}
