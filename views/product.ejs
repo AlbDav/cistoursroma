@@ -32,6 +32,16 @@
 					<div class="price"><p>Prezzo standard:</p><p><%= prices[0].price %>&euro;</p></div>
 				</div>
 				<div id="info">
+					<% if(includes.length > 0){ %>
+						<div id="right">
+							<% if(includes.length > 0){ %>
+								<div class="highlights">Tour includes:</div>
+								<% for(i = 0; i < includes.length; i++){ %>
+								<div><i class="material-icons">check_circle_outline</i><p><%= includes[i] %></p></div>
+								<% } %>
+							<% } %>
+						</div>
+					<% } %>
 					<% if(product.duration != null || hours.length > 0 || days.length > 0){ %>
 						<div id="left">
 							<% if(product.duration != null){ %>
@@ -48,16 +58,7 @@
 							<% } %>
 						</div>
 					<% } %>
-					<% if(includes.length > 0){ %>
-						<div id="right">
-							<% if(includes.length > 0){ %>
-								<div class="highlights">Tour includes:</div>
-								<% for(i = 0; i < includes.length; i++){ %>
-								<div><i class="material-icons">check_circle_outline</i><p><%= includes[i] %></p></div>
-								<% } %>
-							<% } %>
-						</div>
-					<% } %>
+
 				</div>
 				<button onClick="$('html, body').animate({scrollTop: $('#book').offset().top}, 1000);">Book Now</button>
 				<div>
