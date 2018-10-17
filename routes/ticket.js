@@ -20,6 +20,7 @@ router.get('/', function(req, res, next) {
 					}
 					else{
 						console.log(resultpdf);
+						res.send('ciao')
 					}
 				});
 			}
