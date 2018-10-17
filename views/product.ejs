@@ -31,7 +31,6 @@
 				<div id="standard_price">
 					<div class="price"><p>Prezzo standard:</p><p><%= prices[0].price %>&euro;</p></div>
 				</div>
-				<button onClick="$('html, body').animate({scrollTop: $('#book').offset().top}, 1000);">Book Now</button>
 				<div id="info">
 					<% if(includes.length > 0){ %>
 						<div id="right">
@@ -60,6 +59,7 @@
 						</div>
 					<% } %>
 				</div>
+				<button onClick="$('html, body').animate({scrollTop: $('#book').offset().top}, 1000);">Book Now</button>
 				<div>
 					<div id="description"><%= product.description %></div>
 				</div>
