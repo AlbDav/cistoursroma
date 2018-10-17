@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 	var filename = '/tickets/' + token + '.png';
 	qr.toFile(path + '/public' + filename,'Questo è il ticket con token ' + token, function(err){
 		console.log('img done');
+		console.log(path + '/public' + filename);
 		ejs.renderFile(path + '/views/ticket.ejs', {img_path: path + '/public' + filename}, function(err, result){
 			if(result){
 				console.log('ciao');
