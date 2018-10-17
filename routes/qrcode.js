@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 	qr.toDataURL('Dico addio figlio tloooooia', function(err, url){
 		console.log(url);
 		res.send(url);
-	}
+	});
 });
 
 module.exports = router;
