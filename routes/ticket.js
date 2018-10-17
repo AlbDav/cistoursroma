@@ -5,7 +5,7 @@ var rand_str = require('randomstring');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var token = randomstring.generate();
+	var token = rand_str.generate();
 	var filename = './public/' + token + '.png';
 	qr.toFile(filename,'Questo è il ticket con token ' + token, function(err){
 		console.log('done');
