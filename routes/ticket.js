@@ -47,7 +47,7 @@ router.get('/', function(req, res, next) {
 			conosle.log(err);
 		}
 		else{
-			conosole.log(info);
+			console.log(info);
 		}
 	});
 });
