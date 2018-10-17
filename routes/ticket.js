@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 					else{
 						console.log(resultpdf);
 					}
-				}
+				});
 			}
 		});	
 	});
