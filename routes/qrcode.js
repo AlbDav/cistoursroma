@@ -4,9 +4,8 @@ var qr = require('qrcode');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	qr.toDataURL('Dico addio figlio tloooooia', function(err, url){
-		console.log(url);
-		res.send(url);
+	qr.toFile('./qr.png','Dico addio figlio tloooooia', function(err){
+		console.log('done');
 	});
 });
 
