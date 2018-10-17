@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 	var filename = './public/' + token + '.png';
 	qr.toFile(filename,'Questo è il ticket con token ' + token, function(err){
 		console.log('done');
-		res.render('ticket', {filename});
+		res.render('ticket', {img_path: filename});
 	});
 });
 
