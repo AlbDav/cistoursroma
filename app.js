@@ -12,7 +12,7 @@ var productRouter = require('./routes/product');
 var paymentRouter = require('./routes/payment');
 var clientTokenRouter = require('./routes/client_token');
 var checkoutRouter = require('./routes/checkout');
-var qrcodeRouter = require('./routes/qrcode');
+var ticketRouter = require('./routes/ticket');
 
 var app = express();
 
@@ -39,7 +39,7 @@ app.use('/product', productRouter);
 app.use('/payment', paymentRouter);
 app.use('/client_token', clientTokenRouter);
 app.use('/checkout', checkoutRouter);
-app.use('/qrcode', qrcodeRouter);
+app.use('/ticket', ticketRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
