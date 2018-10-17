@@ -14,7 +14,8 @@ router.get('/', function(req, res, next) {
 		console.log('img done');
 		ejs.renderFile(path + '/views/ticket.ejs', {img_path: filename}, function(err, result){
 			if(result){
-				pdf.create(result).toFile(path + '/tickets/' + token + '.pdf', function(error, resultpdf){
+				res.send(result);
+				/*pdf.create(result).toFile(path + '/tickets/' + token + '.pdf', function(error, resultpdf){
 					if(err){
 						console.log('errore');
 					}
@@ -22,7 +23,7 @@ router.get('/', function(req, res, next) {
 						console.log(resultpdf);
 						res.send('ciao')
 					}
-				});
+				});*/
 			}
 		});	
 	});
