@@ -21,7 +21,8 @@ router.get('/', function(req, res, next) {
 					}
 					else{
 						console.log(resultpdf);
-						res.send('ciao')
+						res.contentType('application/pdf');
+						res.send(resultpdf);
 					}
 				});
 			}
