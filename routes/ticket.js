@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 			if(result){
 				console.log('ciao');
 				res.send(result);
-				/*pdf.create(result).toFile(path + '/tickets/' + token + '.pdf', function(error, resultpdf){
+				pdf.create(result).toFile(path + '/public/tickets/' + token + '.pdf', function(error, resultpdf){
 					if(err){
 						console.log('errore');
 					}
@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 						console.log(resultpdf);
 						res.send('ciao')
 					}
-				});*/
+				});
 			}
 		});	
 	});
