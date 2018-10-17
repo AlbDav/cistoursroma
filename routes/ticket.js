@@ -4,6 +4,7 @@ var qr = require('qrcode');
 var rand_str = require('randomstring');
 var ejs = require('ejs');
 var pdf = require('html-pdf');
+var mail = require('nodemailer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,15 +23,32 @@ router.get('/', function(req, res, next) {
 					}
 					else{
 						console.log(resultpdf);
-						res.writeHead(200, {
-							'Content-Type': 'application/pdf',
-							'Content-Disposition': 'attachment; filename=' + resultpdf
-						});
-						res.end(resultpdf);
+						res.send('ticket created');
 					}
 				});
 			}
 		});	
+	});
+	var transporter = mail.createTransport({
+		service: 'gmail',
+		auth: {
+			user: process.env.MAIL_USER,
+			pass: process.env.MAIL_PASS
+		}
+	});
+	var mailOptions = {
+		from: process.env.MAIL_USER,
+		to: process.env.MAIL_ADDRESS,
+		subject: 'Subject',
+		html: '<p>Html</p>'
+	};
+	transporter.sendMail(mailOptions, function(err, info){
+		if(err){
+			conosle.log(err);
+		}
+		else{
+			conosole.log(info);
+		}
 	});
 });
 
