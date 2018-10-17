@@ -15,7 +15,6 @@ router.get('/', function(req, res, next) {
 		ejs.renderFile(path + '/views/ticket.ejs', {img_path: filename}, function(err, result){
 			if(result){
 				console.log('ciao');
-				res.send(result);
 				pdf.create(result).toFile(path + '/public/tickets/' + token + '.pdf', function(error, resultpdf){
 					if(err){
 						console.log('errore');
