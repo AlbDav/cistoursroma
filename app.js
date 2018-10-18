@@ -13,6 +13,7 @@ var paymentRouter = require('./routes/payment');
 var clientTokenRouter = require('./routes/client_token');
 var checkoutRouter = require('./routes/checkout');
 var ticketRouter = require('./routes/ticket');
+var bookRouter = require('./routes/book');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/payment', paymentRouter);
 app.use('/client_token', clientTokenRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/ticket', ticketRouter);
+app.use('/book', bookRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

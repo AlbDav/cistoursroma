@@ -42,7 +42,19 @@
 				$("#curr_price").html(sum + "&euro;");
 			}
 			function book(){
-				$.post("/book", {id: <%- product.product_id %>});
+				var opts = $(".price_option");
+				var quant = '';
+				for(i = 0; i < opts.length; i++){
+					var num = parseInt($("#opt" + i).val());
+					quant = quant + num;
+					if(i < opts.length - 1){
+						quant = quant + ';'
+					}
+				}
+				$.post("/book", {id: "<%- product.product_id %>", qt: quant, info: ''})
+					.done(function(data){
+						alert("Risposta dal server" + data);
+					});	
 			}
 		</script>
 	</head>
@@ -110,6 +122,7 @@
 						<% } %>
 					</div>
 					<div id="curr_price">0&euro;</div>
+					<button onClick="javascript:book()">Book</button>
 				</div>
 			</div>
 		</main>
