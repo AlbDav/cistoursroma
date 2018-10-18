@@ -97,6 +97,12 @@
 		}
 	}
 }
+.price_option{
+	display: table;
+	> *{
+		display: table-cell;
+	}
+}
 
 @media screen and (max-width: 640px){
 	#cont{
