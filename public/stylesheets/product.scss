@@ -112,12 +112,17 @@
 	}
 	> input{
 		width: 1em;
+		height: 1em;
 	}
 	> button{
 		background-color: #1d1d1d;
 		color: #ffc000;
 		border: none;
 		border-radius: 5px;
+		width: 1em;
+	}
+	> .price{
+		color: green;
 	}
 }
 
