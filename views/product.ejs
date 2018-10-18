@@ -67,7 +67,7 @@
 					<input type="text" id="date">
 					<% for(i = 0; i < prices.length; i++){ %>
 						<div class="price_option">
-							<%= prices[i].condition %>: <%= prices[i].price %></p>
+							<div><%= prices[i].price_condition %>: <%= prices[i].price %>&euro;</div>
 							<button>-</button>
 							<input type="text">
 							<button>+</button>
