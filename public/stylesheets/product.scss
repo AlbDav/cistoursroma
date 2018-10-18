@@ -103,7 +103,8 @@
 #price_options{
 	display: table;
 	table-layout: fixed;
-	border-spacing: 0.5em;
+	border-spacing: 0.3em;
+	font-size: 2em;
 }
 .price_option{
 	display: table-row;
@@ -119,7 +120,7 @@
 		color: #ffc000;
 		border: none;
 		border-radius: 5px;
-		width: 1em;
+		width: 1.5em;
 	}
 	> .price{
 		color: green;
