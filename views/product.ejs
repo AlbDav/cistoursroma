@@ -23,7 +23,7 @@
 				for(i = 0; i < opts.length; i++){
 					console.log(opts[i]);
 					var num = parseInt($("#opt" + i).val());
-					var priceText = opt[i].textContent;
+					var priceText = opts[i].textContent;
 					var price = parseInt(priceText.substring(0, -1));
 					sum = sum + (num*price);
 				}
