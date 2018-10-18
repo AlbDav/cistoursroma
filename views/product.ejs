@@ -23,9 +23,9 @@
 				for(i = 0; i < opts.length; i++){
 					var num = parseInt($("#opt" + i).val());
 					var priceText = opts[i].textContent;
-					var price = parseInt(priceText.substring(0, -1));
-					console.log(priceText.substring(0, -1));
-					sum = sum + (num*price);
+					var price = parseFloat(priceText.substring(0, priceText.length - 1));
+					console.log(priceText.substring(0, priceText.length - 1));
+					sum = sum + (num*price); 
 				}
 				$("#curr_price").html(sum + "&euro;");
 			}
