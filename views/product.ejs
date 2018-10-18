@@ -71,9 +71,9 @@
 								<div><%= prices[i].price_condition %>:</div>
 								<div class="price"><%= prices[i].price %>&euro;</div>
 								<div class="change_price">
-									<button>-</button>
+									<button onClick="javascript:sub(<%- i %>)">-</button>
 									<input type="text" id="opt<%= i %>" value="0">
-									<button>+</button>
+									<button onClick="javascript:add(<%- i %>)">+</button>
 								</div>
 							</div>
 						<% } %>
