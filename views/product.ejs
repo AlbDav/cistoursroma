@@ -18,9 +18,10 @@
 				if(currVal > 0){
 					$("#opt" + id).val(currVal - 1);
 				}
-				var opts = $('.price_option > price');
+				var opts = $('.price_option > .price');
 				var sum = 0;
 				for(i = 0; i < opts.length; i++){
+					console.log(opts[i]);
 					var num = parseInt($("#opt" + i).val());
 					var price = parseInt(opts[i].substr(0, -1));
 					sum = sum + (num*price);
