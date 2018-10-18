@@ -23,7 +23,7 @@
 				for(i = 0; i < opts.length; i++){
 					console.log(opts[i]);
 					var num = parseInt($("#opt" + i).text());
-					var price = parseInt(opts[i].substr(0, -1));
+					var price = parseInt(opts[i].substring(0, -1));
 					sum = sum + (num*price);
 				}
 				$("#curr_price").html(sum + "&euro;");
