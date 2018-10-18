@@ -24,7 +24,7 @@
 					var num = parseInt($("#opt" + i).val());
 					var priceText = opts[i].textContent;
 					var price = parseInt(priceText.substring(0, -1));
-					console.log(price);
+					console.log(priceText.substring(0, -1));
 					sum = sum + (num*price);
 				}
 				$("#curr_price").html(sum + "&euro;");
