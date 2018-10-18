@@ -14,15 +14,14 @@
 				$("#date").datepicker();
 			});
 			function sub(id){
-				var currVal = parseInt($("#opt" + id).value);
+				var currVal = parseInt($("#opt" + id).val());
 				if(currVal > 0){
-					$("#opt" + id).value = currVal - 1;
+					$("#opt" + id).val(currVal - 1);
 				}
 			}
 			function add(id){
-				var currVal = $("#opt" +id).value;
-				alert(currVal);
-			//	$("#opt" + id).value = currVal + 1;
+				var currVal = parseInt($("#opt" +id).val());
+				$("#opt" + id).val(currVal + 1);
 			}
 		</script>
 	</head>
