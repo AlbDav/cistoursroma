@@ -41,6 +41,9 @@
 				}
 				$("#curr_price").html(sum + "&euro;");
 			}
+			function book(){
+				$.post("/book", {id: <%- product.product_id %>});
+			}
 		</script>
 	</head>
 	<body>
