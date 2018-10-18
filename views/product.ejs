@@ -13,6 +13,16 @@
 			$(function(){
 				$("#date").datepicker();
 			});
+			function sub(id){
+				var currVal = parseInt($("#opt" + id).value);
+				if(currVal > 0){
+					$("#opt" + id).value = currVal - 1;
+				}
+			}
+			function add(id){
+				var currVal = parseInt($("#opt" +id).value);
+				$("#opt" + id).value = currVal + 1;
+			}
 		</script>
 	</head>
 	<body>
