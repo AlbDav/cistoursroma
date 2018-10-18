@@ -13,7 +13,7 @@ oauth2Client.setCredentials({
 	refresh_token: process.env.GMAIL_REFRESH
 });
 const {Pool} = require('pg');
-const pool = new Pool({
+cons pool = new Pool({
 	user: process.env.PG_USER,
 	host: process.env.PG_HOST,
 	database: process.env.PG_DATABASE,
@@ -34,33 +34,34 @@ router.post('/', function(req, res, next) {
 			console.log('error');
 		}
 		else{
-		var accessToken = oauth2Client.refreshAccessToken()
-			.then(res => res.credentials.access_token);
-		var transporter = mail.createTransport({
-			service: 'gmail',
-			auth: {
-				type: "OAuth2",
-				user: process.env.GMAIL_USER,
-				clientId: process.env.GMAIL_ID,
-				clientSecret: process.env.GMAIL_SECRET,
-				refreshToken: process.env.GMAIL_REFRESH,
-				accessToken: accessToken
-			}
-		});
-		var mailOptions = {
-			from: process.env.MAIL_USER,
-			to: process.env.MAIL_ADDRESS,
-			subject: 'Completa il pagamento',
-			html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + id + '">qui</a> per completare il pagamento</p>'
-		};
-		transporter.sendMail(mailOptions, function(err, info){
-			if(err){
-				conosle.log(err);
-			}
-			else{
-				console.log(info);
-			}
-		});
+			console.log(result);
+			var accessToken = oauth2Client.refreshAccessToken()
+				.then(res => res.credentials.access_token);
+			var transporter = mail.createTransport({
+				service: 'gmail',
+				auth: {
+					type: "OAuth2",
+					user: process.env.GMAIL_USER,
+					clientId: process.env.GMAIL_ID,
+					clientSecret: process.env.GMAIL_SECRET,
+					refreshToken: process.env.GMAIL_REFRESH,
+					accessToken: accessToken
+				}
+			});
+			var mailOptions = {
+				from: process.env.MAIL_USER,
+				to: process.env.MAIL_ADDRESS,
+				subject: 'Completa il pagamento',
+				html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + id + '">qui</a> per completare il pagamento</p>'
+			};
+			transporter.sendMail(mailOptions, function(err, info){
+				if(err){
+					conosle.log(err);
+				}
+				else{
+					console.log(info);
+				}
+			});
 		}
 	});
 });
