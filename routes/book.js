@@ -34,7 +34,7 @@ router.post('/', function(req, res, next) {
 			console.log('error');
 		}
 		else{
-			console.log(result);
+			var payment_id = result.rows[0].payment_id;
 			var accessToken = oauth2Client.refreshAccessToken()
 				.then(res => res.credentials.access_token);
 			var transporter = mail.createTransport({
@@ -52,14 +52,11 @@ router.post('/', function(req, res, next) {
 				from: process.env.MAIL_USER,
 				to: process.env.MAIL_ADDRESS,
 				subject: 'Completa il pagamento',
-				html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + id + '">qui</a> per completare il pagamento</p>'
+				html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + payment_id + '&token' + token">qui</a> per completare il pagamento</p>'
 			};
 			transporter.sendMail(mailOptions, function(err, info){
 				if(err){
 					conosle.log(err);
-				}
-				else{
-					console.log(info);
 				}
 			});
 		}
