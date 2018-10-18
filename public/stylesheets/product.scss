@@ -100,8 +100,12 @@
 #date{
 	display: block;
 }
-.price_option{
+#price_options{
 	display: table;
+	table-layout: fixed;
+}
+.price_option{
+	display: table-row;
 	> *{
 		display: table-cell;
 	}
