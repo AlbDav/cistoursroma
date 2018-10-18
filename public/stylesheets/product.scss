@@ -103,6 +103,7 @@
 #price_options{
 	display: table;
 	table-layout: fixed;
+	border-spacing: 0.5em;
 }
 .price_option{
 	display: table-row;
@@ -117,7 +118,6 @@
 		color: #ffc000;
 		border: none;
 		border-radius: 5px;
-		line-height: normal;
 	}
 }
 
