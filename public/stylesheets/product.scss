@@ -97,10 +97,23 @@
 		}
 	}
 }
+#date{
+	display: block;
+}
 .price_option{
 	display: table;
 	> *{
 		display: table-cell;
+	}
+	> input{
+		width: 1em;
+	}
+	> button{
+		background-color: #1d1d1d;
+		color: #ffc000;
+		border: none;
+		border-radius: 5px;
+		line-height: normal;
 	}
 }
 

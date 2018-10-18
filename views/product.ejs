@@ -29,7 +29,7 @@
 			<div id="cont">
 				<div id="title"><%= product.title %></div>
 				<div id="standard_price">
-					<div class="price"><p>Prezzo standard:</p><p><%= prices[0].price %>&euro;</p></div>
+					<div class="price"><p>Standard price:</p><p><%= prices[0].price %>&euro;</p></div>
 				</div>
 				<div id="info">
 					<% if(includes.length > 0){ %>
@@ -65,7 +65,6 @@
 				</div>
 				<div id="book">
 					<input type="text" id="date">
-					<input type="date">
 					<% for(i = 0; i < prices.length; i++){ %>
 						<div class="price_option">
 							<div><%= prices[i].price_condition %>: <%= prices[i].price %>&euro;</div>
