@@ -103,7 +103,7 @@
 #price_options{
 	display: table;
 	table-layout: fixed;
-	border-spacing: 0.3em;
+	border-spacing: 0.4em;
 	font-size: 2em;
 }
 .price_option{
@@ -151,5 +151,8 @@
 				font-size: 1em;
 			}
 		}
+	}
+	#price_options{
+		font-size: 1.5em;
 	}
 }
