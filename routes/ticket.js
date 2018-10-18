@@ -5,6 +5,16 @@ var rand_str = require('randomstring');
 var ejs = require('ejs');
 var pdf = require('html-pdf');
 var mail = require('nodemailer');
+const {google} = require('googleapis');
+const OAuth2 = google.auth.OAuth2;
+const oauth2Client = new OAuth2(
+	process.env.GMAIL_ID,
+	process.env.GMAIL_SECRET,
+	"https://developers.google.com/oauthplayground"
+);
+oauth2Client.setCredentials({
+	refresh_token: process.env.GMAIL_REFRESH
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -29,11 +39,17 @@ router.get('/', function(req, res, next) {
 			}
 		});	
 	});
+	var accessToken = oauth2Client.refreshAccessToken()
+		.then(res => res.credentials.access_token);
 	var transporter = mail.createTransport({
 		service: 'gmail',
 		auth: {
-			user: process.env.MAIL_USER,
-			pass: process.env.MAIL_PASS
+			type: "OAuth2",
+			user: process.env.GMAIL_USER,
+			clientId: process.env.GMAIL_ID,
+			clientSecret: process.env.GMAIL_SECRET,
+			refreshToken: process.env.GMAIL_REFRESH,
+			accessToken: accessToken
 		}
 	});
 	var mailOptions = {
