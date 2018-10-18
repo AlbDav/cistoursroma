@@ -65,6 +65,14 @@
 				</div>
 				<div id="book">
 					<input type="text" id="date">
+					<% for(i = 0; i < prices.length; i++){ %>
+						<div class="price_option">
+							<%= prices[i].condition %>: <%= prices[i].price %></p>
+							<button>-</button>
+							<input type="text">
+							<button>+</button>
+						</div>
+					<% } %>
 				</div>
 			</div>
 		</main>
