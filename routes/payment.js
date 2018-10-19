@@ -11,7 +11,7 @@ const pool = new Pool({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var id = req.query.num;
+	var id = req.query.id;
 	var token = req.query.token;
 
 	pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
