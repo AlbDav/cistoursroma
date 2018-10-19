@@ -58,6 +58,7 @@ router.post('/', function(req, res, next) {
 				if(err){
 					conosle.log(err);
 				}
+				res.send("success");
 			});
 		}
 	});
