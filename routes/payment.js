@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
 				      var price_temp = parseFloat(info[i].price);
 				      price = price + (qt_temp*price_temp);
 				}
-				res.send(price);
+				res.send('prezzo:' + price);
 				//res.render('payment');
 			});
 		}
