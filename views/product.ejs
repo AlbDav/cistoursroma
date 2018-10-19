@@ -52,8 +52,8 @@
 					}
 				}
 				$.post("/book", {id: "<%- product.product_id %>", qt: quant, info: ''})
-					.done(function(data){
-						alert("Risposta dal server" + data);
+					.done(function(){
+						alert("Success!");
 					});	
 			}
 		</script>

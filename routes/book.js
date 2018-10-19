@@ -52,7 +52,7 @@ router.post('/', function(req, res, next) {
 				from: process.env.MAIL_USER,
 				to: process.env.MAIL_ADDRESS,
 				subject: 'Completa il pagamento',
-				html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + payment_id + '&token' + token + '">qui</a> per completare il pagamento</p>'
+				html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + payment_id + '&token=' + token + '">qui</a> per completare il pagamento</p>'
 			};
 			transporter.sendMail(mailOptions, function(err, info){
 				if(err){
