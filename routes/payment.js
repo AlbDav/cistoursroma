@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
 	var token = req.query.token;
 	
 	pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
-		if(err){
-			console.log(err);
+		if(error){
+			console.log(error);
 		}
 		if(result.rowCount == 0){
 			res.send('errore: nessuna prenotazione trovata');
