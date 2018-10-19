@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 		}
 		else{
 			var book = result.rows[0];
-			var qt = (book.qt).split(';');
+			var qt = book.quantity.split(';');
 			pool.query('SELECT * FROM products_en, prices WHERE products_en.product_id = prices.product_id AND products_en.product_id = $1 ORDER BY prices.option_num', [book.product_id], (err, res_info) => {
 				var info = res_info.rows;
 				var price = 0;
