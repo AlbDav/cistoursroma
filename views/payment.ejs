@@ -36,11 +36,11 @@
 	   $.ajax({
 		   type: 'POST',
 		   url: '/checkout',
-		   data: {'payment_method_nonce': payload.nonce}
+		   data: {'payment_method_nonce': payload.nonce, 'id': <%- id %>, 'token': <%- token %>}
 	   }).done(function(result){
-	//	   dropinInstance.teardown(function(teardownErr){
-	//		   $('#submit-button').remove();
-	//	   });
+		   dropinInstance.teardown(function(teardownErr){
+			   $('#submit-button').remove();
+		   });
 
 		   if(result.success){
 			   console.log('success');
