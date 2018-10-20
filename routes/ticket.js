@@ -79,7 +79,9 @@ router.get('/', function(req, res, next) {
 									else{
 										console.log(info);
 										fs.unlink(path + '/public/tickets/' + token + '.pdf', (err) => {
-											res.send('ticket sent');
+											fs.unlink(path + '/public/tickets/' + token + '.png', (err) => {
+												res.send('ticket sent');
+											});
 										});
 									}
 								});
