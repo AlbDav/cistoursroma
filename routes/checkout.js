@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var httpReq = require('request');
 var braintree = require('braintree');
 var gateway = braintree.connect({
 	environment:  braintree.Environment.Sandbox,
@@ -50,8 +51,10 @@ router.post('/', function(req, res, next) {
 					if(tr_err){
 						console.log('err');
 					}
-					console.log(tr_result);
-					res.send(tr_result);
+					httpReq.get({url: 'http://cistoursroma.com/mail_ticket', qs: {id: id, token: token}, json: true}, function(http_err, http_res, http_body){
+							res.send(tr_result);
+						}
+					});
 				});
                         });
                 }
