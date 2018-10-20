@@ -32,6 +32,7 @@
        submitButton.addEventListener('click', function () {
          dropinInstance.requestPaymentMethod(function (err, payload) {
            if (err) {
+		   console.log('errore');
            }
 	   $.ajax({
 		   type: 'POST',
