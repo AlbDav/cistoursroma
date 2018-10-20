@@ -47,6 +47,7 @@ router.post('/', function(req, res, next) {
 		res.send(result);
 	});*/
 	console.log(id + ' ' + token);
+	res.send('done');
 });
 
 module.exports = router;
