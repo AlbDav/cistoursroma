@@ -37,7 +37,7 @@
 	   $.ajax({
 		   type: 'POST',
 		   url: '/checkout',
-		   data: {'payment_method_nonce': payload.nonce, 'id': <%- id %>, 'token': <%- token %>}
+		   data: {'payment_method_nonce': payload.nonce, 'id': <%- id %>, 'token': '<%- token %>'}
 	   }).done(function(result){
 		   dropinInstance.teardown(function(teardownErr){
 			   $('#submit-button').remove();
