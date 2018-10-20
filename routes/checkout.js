@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
         var token = req.body.token;
 
         pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
-                if(error){
+                /*if(error){
                         console.log(error);
                 }
                 if(result.rowCount == 0){
@@ -49,9 +49,10 @@ router.post('/', function(req, res, next) {
 					console.log(tr_result);
 					res.send(tr_result);
 				});
-                        });*/
+                        });
 			res.send('ciao');
-                }
+                }*/
+		res.send('ciao');
         });
 });
 
