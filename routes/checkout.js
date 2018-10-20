@@ -50,6 +50,7 @@ router.post('/', function(req, res, next) {
 					res.send(tr_result);
 				});
                         });*/
+			res.send('ciao');
                 }
         });
 });
