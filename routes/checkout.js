@@ -41,12 +41,12 @@ router.post('/', function(req, res, next) {
 					options: {
 						submitForSettlement: true
 					}
-				}, function(err, result){
+				}, function(tr_err, tr_result){
 					if(err){
 						console.log('err');
 					}
-					console.log(result);
-					res.send(result);
+					console.log(tr_result);
+					res.send(tr_result);
 				});
                         });
                 }
