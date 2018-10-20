@@ -39,6 +39,9 @@ router.post('/', function(req, res, next) {
 						submitForSettlement: true
 					}
 				}, function(err, result){
+					if(err){
+						console.log('err');
+					}
 					console.log(result);
 					res.send(result);
 				});
