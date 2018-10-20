@@ -24,7 +24,7 @@ router.post('/', function(req, res, next) {
                 else{
                         var book = result.rows[0];
                         var qt = book.quantity.split(';');
-                        pool.query('SELECT * FROM products_en, prices WHERE products_en.product_id = prices.product_id AND products_en.product_id = $1 ORDER BY prices.option_num', [book.product_id], (err, res_info) => {
+                        /*pool.query('SELECT * FROM products_en, prices WHERE products_en.product_id = prices.product_id AND products_en.product_id = $1 ORDER BY prices.option_num', [book.product_id], (err, res_info) => {
 				if(err){
 					console.log('err');
 				}
@@ -49,7 +49,7 @@ router.post('/', function(req, res, next) {
 					console.log(tr_result);
 					res.send(tr_result);
 				});*/
-                        });
+                        });*/
                 }
         });
 });
