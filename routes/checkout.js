@@ -47,7 +47,7 @@ router.post('/', function(req, res, next) {
 						submitForSettlement: true
 					}
 				}, function(tr_err, tr_result){
-					if(err){
+					if(tr_err){
 						console.log('err');
 					}
 					console.log(tr_result);
