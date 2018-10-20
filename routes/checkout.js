@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
         var id = req.body.id;
         var token = req.body.token;
 
-        pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
+ /*       pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
                 if(error){
                         console.log(error);
                 }
@@ -47,9 +47,8 @@ router.post('/', function(req, res, next) {
 				});
                         });
                 }
-        });
-	
-
+        });*/
+	res.send('ciao');
 });
 
 module.exports = router;
