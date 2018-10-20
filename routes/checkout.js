@@ -35,7 +35,8 @@ router.post('/', function(req, res, next) {
                                       var price_temp = parseFloat(info[i].price);
                                       price = price + (qt_temp*price_temp);
                                 }
-				gateway.transaction.sale({
+				res.send('ciao');
+				/*gateway.transaction.sale({
 					amount: price,
 					paymentMethodNonce: paymentNonce,
 					options: {
@@ -47,7 +48,7 @@ router.post('/', function(req, res, next) {
 					}
 					console.log(tr_result);
 					res.send(tr_result);
-				});
+				});*/
                         });
                 }
         });
