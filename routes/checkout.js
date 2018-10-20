@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
         var id = req.body.id;
         var token = req.body.token;
 
- /*       pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
+        pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
                 if(error){
                         console.log(error);
                 }
@@ -25,6 +25,9 @@ router.post('/', function(req, res, next) {
                         var book = result.rows[0];
                         var qt = book.quantity.split(';');
                         pool.query('SELECT * FROM products_en, prices WHERE products_en.product_id = prices.product_id AND products_en.product_id = $1 ORDER BY prices.option_num', [book.product_id], (err, res_info) => {
+				if(err){
+					console.log('err');
+				}
                                 var info = res_info.rows;
                                 var price = 0;
                                 for(i = 0; i < qt.length; i++){
@@ -47,8 +50,7 @@ router.post('/', function(req, res, next) {
 				});
                         });
                 }
-        });*/
-	res.send('ciao');
+        });
 });
 
 module.exports = router;
