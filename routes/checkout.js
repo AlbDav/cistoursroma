@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
         var id = req.body.id;
         var token = req.body.token;
 
-       /* pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
+        pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
                 if(error){
                         console.log(error);
                 }
@@ -32,22 +32,21 @@ router.post('/', function(req, res, next) {
                                       var price_temp = parseFloat(info[i].price);
                                       price = price + (qt_temp*price_temp);
                                 }
-                                res.render('payment', {price});
+				gateway.transaction.sale({
+					amount: price,
+					paymentMethodNonce: paymentNonce,
+					options: {
+						submitForSettlement: true
+					}
+				}, function(err, result){
+					console.log(result);
+					res.send(result);
+				});
                         });
                 }
         });
-	gateway.transaction.sale({
-		amount: "10.00",
-		paymentMethodNonce: paymentNonce,
-		options: {
-			submitForSettlement: true
-		}
-	}, function(err, result){
-		console.log(result);
-		res.send(result);
-	});*/
-	console.log(id + ' ' + token);
-	res.send('done');
+	
+
 });
 
 module.exports = router;
