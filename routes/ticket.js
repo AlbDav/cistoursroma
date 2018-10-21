@@ -24,10 +24,10 @@ const pool = new Pool({
         password: process.env.PG_PASS,
         port: process.env.PG_PORT
 });
+const path = process.env.PATH_TO_PROJECT;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var path = process.env.PATH_TO_PROJECT;
 	var id = req.query.id;
 	var token = req.query.token;
         pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
