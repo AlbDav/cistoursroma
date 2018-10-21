@@ -52,6 +52,7 @@ router.post('/', function(req, res, next) {
 						console.log('err');
 					}
 					httpReq.get({url: 'http://cistoursroma.com/ticket', qs: {id: id, token: token}, json: true}, function(http_err, http_res, http_body){
+						console.log(tr_result);
 						res.send(tr_result);
 					});
 				});
