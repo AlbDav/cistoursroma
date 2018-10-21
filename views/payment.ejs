@@ -49,6 +49,8 @@
 		   else{
 			   console.log('error');
 		   }
+	   }).fail(function(xhr, text){
+		   console.log(text);
 	   });
          });
        });
