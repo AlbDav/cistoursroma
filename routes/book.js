@@ -31,7 +31,7 @@ router.post('/', function(req, res, next) {
 	var paid = 0;
 	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, payment_token, paid) VALUES($1, $2, $3, $4, $5, $6) RETURNING *', [id, qt, date, info, token, paid], (err, result) => {
 		if(err){
-			console.log('error');
+			console.log(err);
 		}
 		else{
 			var payment_id = result.rows[0].payment_id;
@@ -56,7 +56,7 @@ router.post('/', function(req, res, next) {
 			};
 			transporter.sendMail(mailOptions, function(err, info){
 				if(err){
-					conosle.log(err);
+					console.log(err);
 				}
 				res.send("success");
 			});
