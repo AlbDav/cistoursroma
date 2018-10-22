@@ -108,6 +108,8 @@
 			> *{
 				display: table-cell;
 			}
+		}
+		.price_option{
 			> .change_price{
 				> input{
 					width: 1em;
@@ -158,6 +160,15 @@
 			width: 90%;
 			font-size: 1em;
 			border-radius: 0em;
+		}
+	}
+	#form_elems{
+		display: normal;
+		> div{
+			display: normal;
+			> * {
+				display: normal;
+			}
 		}
 	}
 }
