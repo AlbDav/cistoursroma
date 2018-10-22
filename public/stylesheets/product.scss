@@ -98,7 +98,7 @@
 	}
 }
 #book{
-	> div{
+	#form_elems, #price_options{
 		width: 70%;
 		display: table;
 		border-spacing: 0.4em;
@@ -109,23 +109,23 @@
 				display: table-cell;
 			}
 		}
-		.price_option{
-			> .change_price{
-				> input{
-					width: 1em;
-					height: 1em;
-				}
-				> button{
-					background-color: #1d1d1d;
-					color: #ffc000;
-					border: none;
-					border-radius: 5px;
-					width: 1.5em;
-				}
+	}
+	.price_option{
+		> .change_price{
+			> input{
+				width: 1em;
+				height: 1em;
 			}
-			> .price{
-				color: green;
+			> button{
+				background-color: #1d1d1d;
+				color: #ffc000;
+				border: none;
+				border-radius: 5px;
+				width: 1.5em;
 			}
+		}
+		> .price{
+			color: green;
 		}
 	}
 }
