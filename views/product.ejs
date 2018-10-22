@@ -107,11 +107,13 @@
 					<div id="description"><%= product.description %></div>
 				</div>
 				<div id="book">
-					<div><p class="form_el">First name:</p><input type="text" class="form_el" id="name"></div>
-					<div><p class="form_el">Last name:</p><input type="text" class="form_el" id="name"></div>
-					<div><p class="form_el">E-mail:</p><input type="text" class="form_el" id="email"></div>
-					<div><p class="form_el">Phone number:</p><input type="text" class="form_el" id="phone"></div>
-					<div><p class="form_el">Date:</p><input type="text" class="form_el" id="date"></div>
+					<div id="form_elems">
+						<div><p class="form_el">First name:</p><input type="text" class="form_el" id="name"></div>
+						<div><p class="form_el">Last name:</p><input type="text" class="form_el" id="name"></div>
+						<div><p class="form_el">E-mail:</p><input type="text" class="form_el" id="email"></div>
+						<div><p class="form_el">Phone number:</p><input type="text" class="form_el" id="phone"></div>
+						<div><p class="form_el">Date:</p><input type="text" class="form_el" id="date"></div>
+					</div>
 					<div id="price_options">
 						<% for(i = 0; i < prices.length; i++){ %>
 							<div class="price_option">
