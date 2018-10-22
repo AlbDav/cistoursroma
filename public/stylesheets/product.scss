@@ -98,7 +98,7 @@
 	}
 }
 #book{
-	#form_elems, #price_options{
+	#forme_elems, #price_options{
 		width: 70%;
 		display: table;
 		border-spacing: 0.4em;
@@ -156,7 +156,7 @@
 		}
 	}
 	#book{
-		> div{
+		#form_elems, #price_options{
 			width: 90%;
 			font-size: 1em;
 			border-radius: 0em;
