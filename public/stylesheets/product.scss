@@ -97,14 +97,15 @@
 		}
 	}
 }
-input{
-	display: block;
+#book{
+	> div{
+		width: 70%;
+	}
 }
 #price_options{
 	display: table;
 	border-spacing: 0.4em;
 	font-size: 2em;
-	width: 70%;
 }
 .price_option{
 	display: table-row;
@@ -154,9 +155,13 @@ input{
 			}
 		}
 	}
+	#book{
+		> div{
+			width: 90%;
+		}
+	}
 	#price_options{
 		font-size: 1em;
 		border-radius: 0em;
-		width: 90%;
 	}
 }
