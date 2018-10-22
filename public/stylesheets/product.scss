@@ -161,13 +161,13 @@
 			font-size: 1em;
 			border-radius: 0em;
 		}
-	}
-	#form_elems{
-		display: block;
-		> div{
+		#form_elems{
 			display: block;
-			> * {
+			> div{
 				display: block;
+				> * {
+					display: block;
+				}
 			}
 		}
 	}
