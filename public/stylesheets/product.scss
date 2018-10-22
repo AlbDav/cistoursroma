@@ -163,11 +163,11 @@
 		}
 	}
 	#form_elems{
-		display: normal;
+		display: block;
 		> div{
-			display: normal;
+			display: block;
 			> * {
-				display: normal;
+				display: block;
 			}
 		}
 	}
