@@ -111,7 +111,7 @@
 		}
 	}
 	#form_elems{
-		> input{
+		> div > input{
 			border: 1px solid;
 			border-color: grey;
 			.invalid{
