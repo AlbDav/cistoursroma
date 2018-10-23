@@ -37,7 +37,7 @@ router.post('/', function(req, res, next) {
 	console.log(lastName);
 	console.log(email);
 	console.log(phone);
-	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, paid) VALUES($1, $2, $3, $4, $5, $6) RETURNING *', [id, qt, date, info, token, paid], (err, result) => {
+	/*pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, paid) VALUES($1, $2, $3, $4, $5, $6) RETURNING *', [id, qt, date, info, token, paid], (err, result) => {
 		if(err){
 			console.log(err);
 		}
@@ -69,7 +69,7 @@ router.post('/', function(req, res, next) {
 				res.send("success");
 			});
 		}
-	});
+	});*/
 });
 
 module.exports = router;
