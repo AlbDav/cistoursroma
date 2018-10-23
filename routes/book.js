@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 	var email = req.body.email;
 	var phone = req.body.phone;
 	var qt = req.body.qt;
-	var date = res.body.date;
+	var date = req.body.date;
 	var info = req.body.info;
 	var token = rand_str.generate();
 	var paid = 0;
