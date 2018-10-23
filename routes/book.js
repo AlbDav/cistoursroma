@@ -23,7 +23,7 @@ const pool = new Pool({
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-/*	var id = req.body.id;
+	var id = req.body.id;
 	var firstName = req.body.firstName;
 	var lastName = req.body.lastName;
 	var email = req.body.email;
