@@ -108,15 +108,13 @@
 			> *{
 				display: table-cell;
 			}
-		}
-	}
-	#form_elems{
-		> div > input{
-			border: 1px solid;
-			border-color: grey;
-		}
-		> div > input.invalid{
-			border-color:red;
+			> input{
+				border: 1px solid;
+				border-color: grey;
+			}
+			> input.invalid{
+				border-color:red;
+			}
 		}
 	}
 	.price_option{
