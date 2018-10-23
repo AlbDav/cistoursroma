@@ -78,7 +78,7 @@
 					if(quantNum > 0){
 						var firstName = $("#first_name").val();
 						var lastName = $("#last_name").val();
-						var email = $("#phone").val();
+						var email = $("#email").val();
 						var phone = $("#phone").val();
 						var date = $("#date").val();
 						$.post("/book", {id: <%- product.product_id %>, firstName: firstName, lastName: lastName, email: email, phone, phone, date: date, qt: quantStr, info: ''}).done(function(){
