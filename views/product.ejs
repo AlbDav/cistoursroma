@@ -42,19 +42,45 @@
 				$("#curr_price").html(sum + "&euro;");
 			}
 			function book(){
-				var opts = $(".price_option");
-				var quant = '';
-				for(i = 0; i < opts.length; i++){
-					var num = parseInt($("#opt" + i).val());
-					quant = quant + num;
-					if(i < opts.length - 1){
-						quant = quant + ';'
-					}
+				var valid = true;
+				if($("#first_name").val().length == 0){
+					$("#first_name").addClass("invalid");
+					valid = false;
 				}
-				$.post("/book", {id: <%- product.product_id %>, qt: quant, info: ''}).done(function(){
-						alert("Success!");
-						console.log("success");
+				if($("#last_name").val().length == 0){
+					$("#last_name").addClass("invalid");
+					valid = false;
+				}
+				if($("#last_name").val().length == 0){
+					$("#last_name").addClass("invalid");
+					valid = false;
+				}
+				if($("#email").val().length == 0){
+					$("#email").addClass("invalid");
+					valid = false;
+				}
+				if($("#date").val().length == 0){
+					$("#date").addClass("invalid");
+					valid = false;
+				}
+				if(valid){
+					var opts = $(".price_option");
+					var quant = '';
+					for(i = 0; i < opts.length; i++){
+						var num = parseInt($("#opt" + i).val());
+						quant = quant + num;
+						if(i < opts.length - 1){
+							quant = quant + ';'
+						}
+					}
+					$.post("/book", {id: <%- product.product_id %>, qt: quant, info: ''}).done(function(){
+							alert("Success!");
+							console.log("success");
 					});	
+				}
+				else{
+					$("#form_message").css('display','block');
+				}
 			}
 		</script>
 	</head>
@@ -108,8 +134,8 @@
 				</div>
 				<div id="book">
 					<div id="form_elems">
-						<div class="form_elem"><p>First name:</p><input type="text" id="name"></div>
-						<div class="form_elem"><p>Last name:</p><input type="text" id="name"></div>
+						<div class="form_elem"><p>First name:</p><input type="text" id="first_name"></div>
+						<div class="form_elem"><p>Last name:</p><input type="text" id="last_name"></div>
 						<div class="form_elem"><p>E-mail:</p><input type="text" id="email"></div>
 						<div class="form_elem"><p>Phone number:</p><input type="text" id="phone"></div>
 						<div class="form_elem"><p>Date:</p><input type="text" id="date"></div>
@@ -128,6 +154,7 @@
 						<% } %>
 					</div>
 					<div id="curr_price">0&euro;</div>
+					<div id="form_message">Errore: compila tutti i campi!</div>
 					<button onClick="javascript:book()">Book</button>
 				</div>
 			</div>

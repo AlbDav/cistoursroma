@@ -110,6 +110,15 @@
 			}
 		}
 	}
+	#form_elems{
+		> input{
+			border: 1px solid;
+			border-color: grey;
+			.invalid{
+				border-color:red;
+			}
+		}
+	}
 	.price_option{
 		> .change_price{
 			> input{
