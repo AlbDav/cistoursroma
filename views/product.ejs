@@ -79,7 +79,8 @@
 						$.post("/book", {id: <%- product.product_id %>, qt: quant, info: ''}).done(function(){
 								alert("Success!");
 								console.log("success");
-						});	
+						});
+					}
 					else{
 						console.log('nessuna quantità');
 					}
