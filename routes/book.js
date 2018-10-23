@@ -24,8 +24,12 @@ const pool = new Pool({
 /* GET home page. */
 router.post('/', function(req, res, next) {
 	var id = req.body.id;
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var email = req.body.email;
+	var phone = req.body.phone
 	var qt = req.body.qt;
-	var date = new Date();
+	var date = res.body.date;
 	var info = req.body.info;
 	var token = rand_str.generate();
 	var paid = 0;
@@ -49,8 +53,8 @@ router.post('/', function(req, res, next) {
 				}
 			});
 			var mailOptions = {
-				from: process.env.MAIL_USER,
-				to: process.env.MAIL_ADDRESS,
+				from: process.env.GMAIL_USER,
+				to: email,
 				subject: 'Completa il pagamento',
 				html: '<p>Clicca <a href="http://cistoursroma.com/payment?id=' + payment_id + '&token=' + token + '">qui</a> per completare il pagamento</p>'
 			};

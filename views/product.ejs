@@ -51,12 +51,12 @@
 					$("#last_name").addClass("invalid");
 					valid = false;
 				}
-				if($("#phone").val().length == 0){
-					$("#phone").addClass("invalid");
-					valid = false;
-				}
 				if($("#email").val().length == 0){
 					$("#email").addClass("invalid");
+					valid = false;
+				}
+				if($("#phone").val().length == 0){
+					$("#phone").addClass("invalid");
 					valid = false;
 				}
 				if($("#date").val().length == 0){
@@ -76,7 +76,12 @@
 						}
 					}
 					if(quantNum > 0){
-						$.post("/book", {id: <%- product.product_id %>, qt: quantStr, info: ''}).done(function(){
+						var firstName = $("#first_name".val();
+						var lastName = $("#last_name").val();
+						var email = $("#phone").val();
+						var phone = $("#phone").val();
+						var date = $("#date").val();
+						$.post("/book", {id: <%- product.product_id %>, firstName: firstName, lastName: lastName, email: email, phone, phone, date: date, qt: quantStr, info: ''}).done(function(){
 								alert("Success!");
 								console.log("success");
 						});
