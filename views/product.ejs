@@ -65,18 +65,24 @@
 				}
 				if(valid){
 					var opts = $(".price_option");
-					var quant = '';
+					var quantNum = 0;
+					var quantStr = '';
 					for(i = 0; i < opts.length; i++){
 						var num = parseInt($("#opt" + i).val());
-						quant = quant + num;
+						quantNum = quantNum + num;
+						quantStr = quant + num;
 						if(i < opts.length - 1){
 							quant = quant + ';'
 						}
 					}
-					$.post("/book", {id: <%- product.product_id %>, qt: quant, info: ''}).done(function(){
-							alert("Success!");
-							console.log("success");
-					});	
+					if(quantNum > 0){
+						$.post("/book", {id: <%- product.product_id %>, qt: quant, info: ''}).done(function(){
+								alert("Success!");
+								console.log("success");
+						});	
+					else{
+						console.log('nessuna quantità');
+					}
 				}
 				else{
 					$("#form_message").css('display','block');
