@@ -67,7 +67,7 @@ router.get('/', function(req, res, next) {
 								});
 								var mailOptions = {
 									from: process.env.MAIL_USER,
-									to: process.env.MAIL_ADDRESS,
+									to: ticket.email,
 									subject: 'Subject',
 									html: '<p>Ecco il tuo biglietto</p>',
 									attachments: [{filename: 'ticket.pdf', path: path + '/public/tickets/' + token + '.pdf'}]
