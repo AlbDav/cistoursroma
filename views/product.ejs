@@ -76,7 +76,7 @@
 						}
 					}
 					if(quantNum > 0){
-						$.post("/book", {id: <%- product.product_id %>, qt: quant, info: ''}).done(function(){
+						$.post("/book", {id: <%- product.product_id %>, qt: quantStr, info: ''}).done(function(){
 								alert("Success!");
 								console.log("success");
 						});
