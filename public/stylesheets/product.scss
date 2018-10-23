@@ -114,7 +114,8 @@
 		> div > input{
 			border: 1px solid;
 			border-color: grey;
-			.invalid{
+		}
+		> div > input.invalid{
 				border-color:red;
 			}
 		}
