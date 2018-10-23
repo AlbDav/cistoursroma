@@ -37,7 +37,7 @@ router.post('/', function(req, res, next) {
 	console.log(lastName);
 	console.log(email);
 	console.log(phone);
-	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, email, paid) VALUES($1, $2, $3, $4, $5, $6) RETURNING *', [id, qt, date, info, token, email, paid], (err, result) => {
+	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, email, paid) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [id, qt, date, info, token, email, paid], (err, result) => {
 		if(err){
 			console.log(err);
 		}
