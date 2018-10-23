@@ -33,6 +33,10 @@ router.post('/', function(req, res, next) {
 	var info = req.body.info;
 	var token = rand_str.generate();
 	var paid = 0;
+	console.log(firstName);
+	console.log(lastName);
+	console.log(email);
+	console.log(phone);
 	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, paid) VALUES($1, $2, $3, $4, $5, $6) RETURNING *', [id, qt, date, info, token, paid], (err, result) => {
 		if(err){
 			console.log(err);
