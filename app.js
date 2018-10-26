@@ -14,6 +14,7 @@ var clientTokenRouter = require('./routes/client_token');
 var checkoutRouter = require('./routes/checkout');
 var ticketRouter = require('./routes/ticket');
 var bookRouter = require('./routes/book');
+var categoryRouter = require('./routes/category');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/client_token', clientTokenRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/ticket', ticketRouter);
 app.use('/book', bookRouter);
+app.use('/category', categoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
