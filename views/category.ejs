@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C.I.S Tours</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+		<link rel="stylesheet" href="/stylesheets/product.css" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	</head>
+	<body>
+		<nav>
+			<img src="/icons/icon.jpg">
+			<section id="buttons">
+				<button>Home</button>
+				<button>Categories</button>
+				<button>Contact Us</button>
+			</section>
+		</nav>
+		<main>
+			<div class="parallax" style="background-image: url('<%= category.img %>')"></div>
+			<div id="cont">
+				<div id="name"><%= category.name %></div>
+				<% products.forEach(function(product){ %>
+		       			<div class="prod">
+						<div class="image" style="background-image: url('<%= product.img %>')"></div>
+						<div class="title"><%= product.title %></div>
+						<div class="price"><%= product.price %></div>
+						<button class="butt" onClick="location.href='/product/<%= product.product_id %>'">Read More</button>
+					</div>		
+			</div>
+		</main>
+	</body>
+</html>
