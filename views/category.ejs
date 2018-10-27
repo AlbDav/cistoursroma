@@ -23,7 +23,6 @@
 			<div class="parallax" style="background-image: url('<%= category.img %>')"></div>
 			<div id="cont">
 				<div id="name"><%= category.name %></div>
-				<%= products.length %>
 				<% for(i = 0; i < Math.ceil((products.length)/3); i++){ %>
 					<div class="row">
 						<% for(j = (i*3); j < (i*3)+3 && j < products.length; j++){ %>
