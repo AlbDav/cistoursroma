@@ -27,8 +27,12 @@
 				<% for(i = 0; i < Math.ceil((products.length)/3); i++){ %>
 					<div class="row">
 						<% for(j = (i*3); j < (i*3)+3 && j < products.length; j++){ %>
-						<%= j %>
-
+		       					<div class="prod">
+								<div class="img" style="background-image: url('<%= products[j].img %>')"></div>
+								<div class="title"><%= products[j].title %></div>
+								<div class="price"><%= products[j].price %></div>
+								<button class="butt" onClick="location.href='/product/<%= products[j].product_id %>'">Read More</button>
+							</div>
 						<% } %>
 					</div>
 				<% } %>
