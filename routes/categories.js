@@ -14,7 +14,7 @@ const pool = new Pool({
 router.get('/', function(req, res, next) {
 	pool.query('SELECT * FROM categories ORDER BY category_id', (err, result) => {
 		var categories = result.rows;
-		res.render('category', {categories});
+		res.render('categories', {categories});
 	});
 
 });
