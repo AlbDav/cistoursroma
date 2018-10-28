@@ -104,11 +104,10 @@
 
 @media screen and (max-width: 640px){
 	.table{
+		border-spacing: 0;
 		width: 90%;
-		/*margin:{
-			top: 1em;
-			bottom: 1em;
-		}*/
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 	.title{
 		font-size: 1em;
