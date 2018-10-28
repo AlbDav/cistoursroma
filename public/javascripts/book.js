@@ -57,7 +57,7 @@ function book(){
 			quantNum = quantNum + num;
 			quantStr = quantStr + num;
 			if(i < opts.length - 1){
-				quantStr = quantStr + ';'
+				quantStr = quantStr + ';';
 			}
 		}
 		if(quantNum > 0){
@@ -66,10 +66,10 @@ function book(){
 			var email = $("#email").val();
 			var phone = $("#phone").val();
 			var date = $("#date").val();
-			$.post("/book", {id: <%- product.product_id %>, firstName: firstName, lastName: lastName, email: email, phone, phone, date: date, qt: quantStr, info: ''}).done(function(){
+			/*$.post("/book", {id: <%- product.product_id %>, firstName: firstName, lastName: lastName, email: email, phone, phone, date: date, qt: quantStr, info: ''}).done(function(){
 					alert("Success!");
 					console.log("success");
-			});
+			});*/
 		}
 		else{
 			$('.change_price > input').addClass('invalid');
