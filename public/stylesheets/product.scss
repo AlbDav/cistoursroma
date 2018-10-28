@@ -84,18 +84,26 @@
 		}
 	}
 }
-#standard_price{
+.price{
 	display: table;
+	border-spacing: 0.4em;
+	margin-top: -0.4em;
+	> *:last-child{
+		color: green;
+	}
+	> *{
+		display: table-cell;
+	}
+}
+#standard_price{
 	.price{
 		> *:first-child{
 			font-size: 1.3em;
 		}
 		> *:last-child{
 			font-size: 2.5em;
-			color: green;
 		}
 		> *{
-			display: table-cell;
 			vertical-align: middle;
 		}
 	}
