@@ -85,14 +85,17 @@
 	}
 }
 #standard_price{
+	display: table;
 	.price{
 		> *:first-child{
 			font-size: 1.3em;
 		}
 		> *:last-child{
 			font-size: 2.5em;
+			color: green;
 		}
 		> *{
+			display: table-cell;
 			vertical-align: middle;
 		}
 	}
