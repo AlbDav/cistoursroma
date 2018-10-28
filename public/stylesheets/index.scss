@@ -103,6 +103,10 @@
 }
 
 @media screen and (max-width: 640px){
+	.prod{
+		border-spacing: 0;
+		width: 90%;
+	}
 	.title{
 		font-size: 1em;
 	}
