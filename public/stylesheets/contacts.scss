@@ -1,0 +1,20 @@
+#cont{
+	> *{
+		width: 60%;
+	}
+}
+#contacts{
+	> div{
+		display: table;
+		border-spacing: 0.5em;
+		margin-left: 0em;
+		> div{
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+#contacts:first-child{
+	font-size: 1.3em;
+	broder-spacing: 0em;
+}
