@@ -26,6 +26,9 @@ nav{
 		height: 4em;
 		display: block;
 	}
+	> div{
+		display: table;
+	}
 	#buttons{
 		background-color: rgba(29, 29, 29, 1);
 		color: #f9a825;
