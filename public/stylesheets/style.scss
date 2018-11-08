@@ -24,20 +24,18 @@ nav{
 	position: relative;
 	z-index: 2;
 	img{
-		height: 5em;
-		float: left;
+		height: 4em;
+		display: block;
 	}
 	#buttons{
-		height: 5em;
 		background-color: rgba(29, 29, 29, 1);
-		color: #ffc000;
+		color: #f9a825;
 		display: table-cell;
 		vertical-align: bottom;
 		> button{
 			background-color: rgba(29, 29, 29, 1);
-			color: #ffc000;
+			color: #f9a825;
 			border: none;
-			border-bottom: 0.15em solid #ffc000;
 			padding:{
 				top: 0.5em;
 				bottom: 0.5em;
