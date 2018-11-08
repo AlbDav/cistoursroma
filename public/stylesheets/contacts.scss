@@ -20,11 +20,11 @@
 			vertical-align: middle;
 		}
 		> img{
-			height: 1em;
+			height: 1.5em;
 		}
 	}
-}
-#contacts:first-child{
-	font-size: 1.3em;
-	border-spacing: 0em;
+	> div:first-child{
+		font-size: 1.3em;
+		border-spacing: 0em;
+	}
 }
