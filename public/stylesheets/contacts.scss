@@ -32,3 +32,11 @@
 		border-spacing: 0em;
 	}
 }
+
+@media screen and (max-width: 640px){
+	#cont{
+		> *{
+			width: 90%;
+		}
+	}
+}
