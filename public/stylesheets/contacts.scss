@@ -19,9 +19,12 @@
 			display: table-cell;
 			vertical-align: middle;
 		}
+		> img{
+			height: 1em;
+		}
 	}
 }
 #contacts:first-child{
 	font-size: 1.3em;
-	broder-spacing: 0em;
+	border-spacing: 0em;
 }
