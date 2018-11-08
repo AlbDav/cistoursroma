@@ -1,4 +1,11 @@
 #cont{
+	width: 100%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	box-shadow: 0px -2px 5px 0.2px rgba(29, 29, 29, 0.7);
+	position: relative;
+	z-index: 2;
+	color: #1d1d1d;
 	> *{
 		width: 60%;
 	}
