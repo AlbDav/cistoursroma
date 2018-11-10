@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
                 else{
                         var ticket = result.rows[0];
 			var title = ticket.title;
-			var descriptiom = ticket.description;
+			var description = ticket.description;
 			var quantity = ticket.quantity.split(';');
 			var included = ticket.quantity.split(';');
 			var filename = '/tickets/' + token + '.png';
