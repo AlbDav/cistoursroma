@@ -69,6 +69,19 @@ main{
 	font-family: "Material Icons";
 	font-style: normal;
 }
+footer{
+	display: table;
+	table-layout: fixed;
+	> div{
+		display: table-cell;
+		> div:first-child{
+			margin-left: 0;
+		}
+		> div{
+			margin: 0.5em;
+		}
+	}
+}
 
 @media screen and (max-width: 640px){
 	body{
