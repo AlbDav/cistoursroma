@@ -69,7 +69,7 @@ main{
 	font-family: "Material Icons";
 	font-style: normal;
 }
-footer{
+#footer{
 	display: table;
 	table-layout: fixed;
 	> div{
@@ -78,7 +78,7 @@ footer{
 			margin-left: 0;
 		}
 		> div{
-			margin: 0.5em;
+			margin-left: 0.5em;
 		}
 	}
 }
