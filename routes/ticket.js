@@ -49,7 +49,7 @@ router.get('/', function(req, res, next) {
 			qr.toFile(path + '/public' + filename,'Questo è il ticket con token ' + token, function(err){
 				console.log('img done');
 				console.log(path + '/public' + filename);
-				ejs.renderFile(path + '/views/ticket.ejs', {img_path: 'file://' + path + '/public' + filename, title: title, description: description, quantity: quantity, included: included}, function(err, result){
+				ejs.renderFile(path + '/views/ticket.ejs', {img_path: 'file://' + path + '/public' + filename, title: title, description: description, /*quantity: quantity, included: included*/}, function(err, result){
 					if(result){
 						console.log('ciao');
 						pdf.create(result).toFile(path + '/public/tickets/' + token + '.pdf', function(error, resultpdf){
