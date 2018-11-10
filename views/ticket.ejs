@@ -3,7 +3,15 @@
 	<head>
 	</head>
 	<body>
-		<div>Questo è il tuo biglietto</div>
+		<div>This is your ticket</div>
 		<img src="<%= img_path %>">
+		<div><%= title %></div>
+		<div><%= description %></div>
+		<div>Ticket includes:</div>
+		<% for(i = 0; i < quantity.length; i++){ %>
+			<% if(quantity[i] > 0 %>
+				<div><%= quantity[0] %> of <%= included %></div>
+			<% } >
+		<% } %>
 	</body>
 </html>
