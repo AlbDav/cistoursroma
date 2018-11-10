@@ -42,14 +42,11 @@ router.get('/', function(req, res, next) {
 			var title = ticket.title;
 			var description = ticket.description;
 			var quantity = ticket.quantity.split(';');
-			var included = ticket.included.split(';');
-			console.log(quantity);
-			console.log(included);
 			var filename = '/tickets/' + token + '.png';
-			qr.toFile(path + '/public' + filename,'Questo è il ticket con token ' + token, function(err){
+			qr.toFile(path + '/public' + filename,'https://www.cistoursroma.com/verify?' + token, function(err){
 				console.log('img done');
 				console.log(path + '/public' + filename);
-				ejs.renderFile(path + '/views/ticket.ejs', {img_path: 'file://' + path + '/public' + filename, title: title, description: description, /*quantity: quantity, included: included*/}, function(err, result){
+				ejs.renderFile(path + '/views/ticket.ejs', {img_path: 'file://' + path + '/public' + filename, title: title, description: description}, function(err, result){
 					if(result){
 						console.log('ciao');
 						pdf.create(result).toFile(path + '/public/tickets/' + token + '.pdf', function(error, resultpdf){
