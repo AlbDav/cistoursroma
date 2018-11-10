@@ -42,7 +42,9 @@ router.get('/', function(req, res, next) {
 			var title = ticket.title;
 			var description = ticket.description;
 			var quantity = ticket.quantity.split(';');
-			var included = ticket.quantity.split(';');
+			var included = ticket.included.split(';');
+			console.log(quantity);
+			console.log(inlcuded);
 			var filename = '/tickets/' + token + '.png';
 			qr.toFile(path + '/public' + filename,'Questo è il ticket con token ' + token, function(err){
 				console.log('img done');
