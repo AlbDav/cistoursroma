@@ -70,18 +70,21 @@ main{
 	font-style: normal;
 }
 footer{
-	display: table;
-	table-layout: fixed;
-	width: 80%;
+	width: 100%;
 	background-color: rgba(29, 29, 29, 1);
 	color: #f9a825;
 	> div{
-		display: table-cell;
-		> div:first-child{
-			margin-left: 0;
-		}
+		display: table;
+		table-layout: fixed;
+		width: 80%;
 		> div{
-			margin-left: 0.5em;
+			display: table-cell;
+			> div:first-child{
+				margin-left: 0;
+			}
+			> div{
+				margin-left: 0.5em;
+			}
 		}
 	}
 }
