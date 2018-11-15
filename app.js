@@ -18,6 +18,7 @@ var categoryRouter = require('./routes/category');
 var categoriesRouter = require('./routes/categories');
 var contactsRouter = require('./routes/contacts');
 var verifyRouter = require('./routes/verify');
+var termsRouter = require('./routes/terms');
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use('/category', categoryRouter);
 app.use('/categories', categoriesRouter);
 app.use('/contacts', contactsRouter);
 app.use('/verify', verifyRouter);
+app.use('/terms', termsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
