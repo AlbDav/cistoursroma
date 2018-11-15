@@ -10,26 +10,17 @@
 		width: 60%;
 	}
 }
-#contacts{
+#terms{
 	> div{
-		display: table;
-		border-spacing: 0.5em;
-		margin-left: 0em;
-		> *{
-			display: table-cell;
-			vertical-align: middle;
-		}
-		> img{
-			height: 1.5em;
-		}
-		a{
-			text-decoration: none;
-			color: #1d1d1d;
+		> p:first-child{
+			font-size: 1.2em;
+			font-weight: bold;
 		}
 	}
 	> div:first-child{
 		font-size: 1.3em;
-		border-spacing: 0em;
+		text-align: center;
+		font-weight: bold;
 	}
 }
 
