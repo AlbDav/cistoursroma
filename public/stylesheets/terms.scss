@@ -10,18 +10,26 @@
 		width: 60%;
 	}
 }
+#title-terms{
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: bold;
+}
 #terms{
+	display: table;
+	table-layout: fixed;
+	border-spacing: 1em;
 	> div{
+		display: table-cell;
 		> p:first-child{
 			font-size: 1.1em;
 			font-weight: bold;
 		}
+		> p{
+			text-align: center;
+		}
 	}
-	> div:first-child{
-		font-size: 1.3em;
-		text-align: center;
-		font-weight: bold;
-	}
+
 }
 
 @media screen and (max-width: 640px){
