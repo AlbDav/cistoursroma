@@ -35,6 +35,14 @@
 		border-spacing: 0em;
 	}
 }
+#map{
+	> div:first-child{
+		font-size: 1.3em;
+	}
+	> div:last-child{
+		margin-left: 0.5em;
+	}
+}
 
 @media screen and (max-width: 640px){
 	#cont{
