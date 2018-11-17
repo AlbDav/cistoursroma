@@ -24,15 +24,6 @@ router.get('/:id', function(req, res, next) {
 		if(product.included != null){
 			includes = product.included.split(";");
 		}
-		if(product.hours != null){
-			hoursArray = product.hours.split(";");
-			for(i = 0; i < hoursArray.length; i++){
-				days += hoursArray[i];
-				if(i < hoursArray.length-1){
-					days += ', ';
-				}
-			}
-		}
 		if(product.days != null){
 			var daysArray = product.days.split(";");
 			for(i = 0; i < daysArray.length; i++){
@@ -47,7 +38,11 @@ router.get('/:id', function(req, res, next) {
 				console.log(err);
 			}
 			else{
-			console.log(result.rows);
+				for(i = 0; i < result.rows.length; i++){
+					resTemp = result.rows[i];
+					hours[resTemp.lang] = resTemp.hours.split(';');
+				}
+				console.log(hours);
 			}
 			pool.query('SELECT * FROM prices WHERE product_id = $1 ORDER BY option_num', [id], (err, result) => {
 				if(err){
