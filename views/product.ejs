@@ -14,7 +14,8 @@
 		<script>
 			$(function(){
 				$("#date").datepicker();
-				console.log(<%- product.hours %>);
+				var hours = <%- product.hours %>;
+				console.log(hours);
 			});
 		</script>
 	</head>
