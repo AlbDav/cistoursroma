@@ -42,7 +42,6 @@ router.get('/:id', function(req, res, next) {
 					resTemp = result.rows[i];
 					hours[resTemp.lang] = resTemp.hours.split(';');
 				}
-				console.log(hours);
 			}
 			pool.query('SELECT * FROM prices WHERE product_id = $1 ORDER BY option_num', [id], (err, result) => {
 				if(err){
