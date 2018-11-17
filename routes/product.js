@@ -19,7 +19,7 @@ router.get('/:id', function(req, res, next) {
 		}
 		var product = result.rows[0];
 		var includes = [];
-		var hours;
+		var hours = {};
 		var days = '';
 		if(product.included != null){
 			includes = product.included.split(";");
