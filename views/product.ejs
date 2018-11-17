@@ -14,7 +14,7 @@
 		<script>
 			$(function(){
 				$("#date").datepicker();
-				var hours = <%= product.hours %>;
+				var hours = <%= hours %>;
 				console.log(hours);
 			});
 		</script>
@@ -24,7 +24,6 @@
 			<% include nav %>
 		</nav>
 		<main>
-		<%= hours %>;
 			<div class="parallax" style="background-image: url('<%= product.img %>')"></div>
 			<div id="cont">
 				<div id="title"><%= product.title %></div>
