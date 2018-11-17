@@ -42,7 +42,7 @@ router.get('/:id', function(req, res, next) {
 				}
 			}
 		}
-		pool.query('SELECT * FORM hours_lang WHERE product_id = $1', [id], (err, result) => {
+		pool.query('SELECT * FROM hours_lang WHERE product_id = $1', [id], (err, result) => {
 			if(err){
 				console.log(err);
 			}
