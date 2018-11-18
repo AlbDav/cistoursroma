@@ -19,6 +19,7 @@ router.get('/:id', function(req, res, next) {
 		}
 		var product = result.rows[0];
 		var includes = [];
+		var lang = [];
 		var hours = {};
 		var days = '';
 		if(product.included != null){
@@ -42,13 +43,14 @@ router.get('/:id', function(req, res, next) {
 					resTemp = result.rows[i];
 					hours[resTemp.lang] = resTemp.hours.split(';');
 				}
+				lang = Object.getOwnPropertyNames(hours);
 			}
 			pool.query('SELECT * FROM prices WHERE product_id = $1 ORDER BY option_num', [id], (err, result) => {
 				if(err){
 					res.send('errore');
 				}
 				var prices = result.rows;
-				res.render('product', {product, prices, includes, hours, days});
+				res.render('product', {product, prices, includes, lang, hours, days});
 			});
 		});
 	});
