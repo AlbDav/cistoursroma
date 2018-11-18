@@ -22,7 +22,6 @@ router.post('/', function(req, res, next) {
 	var paymentNonce = req.body.payment_method_nonce;
         var id = req.body.id;
         var token = req.body.token;
-
         pool.query('SELECT * FROM payments WHERE payment_id = $1 AND book_token = $2', [id, token], (error, result) => {
                 if(error){
                         console.log(error);
@@ -52,8 +51,6 @@ router.post('/', function(req, res, next) {
 						console.log('err');
 					}
 					httpReq.get({url: 'http://cistoursroma.com/ticket', qs: {id: id, token: token}, json: true}, function(http_err, http_res, http_body){
-						console.log(tr_result);
-						console.log(tr_err);
 						res.send(tr_result);
 					});
 				});
