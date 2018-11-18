@@ -17,6 +17,14 @@
 				var hours = <%- JSON.stringify(hours) %>;
 				console.log(hours);
 			});
+			var changeHours = function(){
+				var newHours = '<option disabled selected>-- select hour --</option>';
+				var lang = $('#lang').val();
+				for(i = 0; i < hours[lang].length; i++){
+					newHours = newHours + '<option>' + hours[lang][i] + '</option>';
+				}
+				$('#hours').html(newHours);
+			}
 		</script>
 	</head>
 	<body>
@@ -83,14 +91,14 @@
 							</div>
 						<% } %>
 					</div>
-					<div id="hours">
-						<select>
+					<div id="hours_lang">
+						<select id="lang" onChange="javascript:changeHours()">
 							<option disabled selected>-- select a language --</option>
 							<% for(i = 0; i < lang.length; i++){ %>
 								<option><%= lang[i] %></option>
 							<% } %>
 						</select>
-						<select>
+						<select id="hours">
 							<option disabled selected>-- no language selected --</option>
 						</select>
 					</div>
