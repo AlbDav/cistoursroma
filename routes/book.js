@@ -40,7 +40,6 @@ router.post('/', function(req, res, next) {
 		else{
 			var payment_id = result.rows[0].payment_id;
 			var accessToken = oauth2Client.getRequestHeaders();
-			awaitPost(req, res, next, accessToken);
 			var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
@@ -67,10 +66,5 @@ router.post('/', function(req, res, next) {
 		}
 	});
 });
-
-async function awaitPost(req, res, next, accessToken){
-	var boh = await accessToken;
-	console.log(boh);
-}
 
 module.exports = router;
