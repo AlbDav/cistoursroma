@@ -75,7 +75,6 @@ router.get('/', function(req, res, next) {
 										conosle.log(err);
 									}
 									else{
-										console.log(info);
 										fs.unlink(path + '/public/tickets/' + token + '.pdf', (err) => {
 											fs.unlink(path + '/public/tickets/' + token + '.png', (err) => {
 												res.send('ticket sent');
