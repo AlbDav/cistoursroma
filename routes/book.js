@@ -42,7 +42,7 @@ router.post('/', function(req, res, next) {
 			var accessToken = oauth2Client.getRequestHeaders()
 				.then(res => res);
 			console.log(accessToken);
-			/*var transporter = mail.createTransport({
+			var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
 					type: "OAuth2",
@@ -64,7 +64,7 @@ router.post('/', function(req, res, next) {
 					console.log(err);
 				}
 				res.send("success");
-			});*/
+			});
 		}
 	});
 });
