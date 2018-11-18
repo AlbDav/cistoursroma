@@ -59,7 +59,7 @@ function book(id){
 		$("#date").addClass("invalid");
 		valid = false;
 	}
-	if($("#hours").val() == null){
+	if(Object.getOwnPropertyNames(hours).length != 0 && $("#hours").val() == null){
 		valid = false;
 	}
 	if(valid){
