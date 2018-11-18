@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
 
 async function awaitGet(req, res, next){
 	var id = req.query.id;
-	var token = req.query.token;
+	var token = req.query.token
 	var accessToken = oauth2Client.getRequestHeaders()
         pool.query('SELECT * FROM payments, products_en WHERE payments.payment_id = $1 AND payments.book_token = $2 AND payments.product_id = products_en.product_id', [id, token], (error, result) => {
                 if(error){
