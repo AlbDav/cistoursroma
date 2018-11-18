@@ -28,14 +28,8 @@ const path = process.env.PATH_TO_PROJECT;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	awaitGet(req, res, next);
-});
-
-async function awaitGet(req, res, next){
 	var id = req.query.id;
-	var token = req.query.token
-		console.log('pippo');
-	var accessToken = oauth2Client.getRequestHeaders()
+	var token = req.query.token;
         pool.query('SELECT * FROM payments, products_en WHERE payments.payment_id = $1 AND payments.book_token = $2 AND payments.product_id = products_en.product_id', [id, token], (error, result) => {
                 if(error){
                         console.log(error);
@@ -50,18 +44,15 @@ async function awaitGet(req, res, next){
 			var quantity = ticket.quantity.split(';');
 			var filename = '/tickets/' + token + '.png';
 			qr.toFile(path + '/public' + filename,'https://www.cistoursroma.com/verify?id=' + id + '&token=' + token, function(err){
-				console.log('img done');
-				console.log(path + '/public' + filename);
 				ejs.renderFile(path + '/views/ticket.ejs', {img_path: 'file://' + path + '/public' + filename, title: title, description: description}, function(err, result){
 					if(result){
-						console.log('ciao');
 						pdf.create(result).toFile(path + '/public/tickets/' + token + '.pdf', function(error, resultpdf){
 							if(err){
 								console.log('errore');
 							}
 							else{
-								console.log(resultpdf);
-								var transporter = mail.createTransport({
+								var accessToken = oauth2Client.getRequestHeaders();
+								var transporter = mail.createTransport({11
 									service: 'gmail',
 									auth: {
 										type: "OAuth2",
@@ -99,6 +90,6 @@ async function awaitGet(req, res, next){
 			});
                 }
         });
-}
+});
 
 module.exports = router;
