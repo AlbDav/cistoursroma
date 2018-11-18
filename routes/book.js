@@ -43,9 +43,11 @@ router.post('/', function(req, res, next) {
 		}
 		else{
 			var payment_id = result.rows[0].payment_id;
-			var accessToken = oauth2Client.refreshAccessToken()
-				.then(res => res.credentials.access_token);
-			var transporter = mail.createTransport({
+//			var accessToken = oauth2Client.refreshAccessToken()
+//				.then(res => res.credentials.access_token);
+			var authHeaders = oauth2Client.getRequestHeaders();
+			conosole.log(authHeaders);
+			/*var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
 					type: "OAuth2",
@@ -67,7 +69,7 @@ router.post('/', function(req, res, next) {
 					console.log(err);
 				}
 				res.send("success");
-			});
+			});*/
 		}
 	});
 });
