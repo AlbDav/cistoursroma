@@ -148,6 +148,14 @@
 			color: green;
 		}
 	}
+	#hours{
+		display: table;
+		table-layout: fixed;
+		border-spacing: 0.5em;
+		> select{
+			display: table-cell;
+		}
+	}
 	#curr_price{
 		text-align: center;
 		color: green;
