@@ -23,6 +23,10 @@ const pool = new Pool({
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
+	awaitPost(req, res, next);
+});
+
+async function awaitPost(req, res, next){
 	var id = req.body.id;
 	var firstName = req.body.firstName;
 	var lastName = req.body.lastName;
@@ -33,16 +37,14 @@ router.post('/', function(req, res, next) {
 	var info = req.body.info;
 	var token = rand_str.generate();
 	var paid = 0;
+	var accessToken = await oauth2Client.getRequestHeaders();
 	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, email, paid) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [id, qt, date, info, token, email, paid], (err, result) => {
 		if(err){
 			console.log(err);
 		}
 		else{
 			var payment_id = result.rows[0].payment_id;
-			var accessToken = oauth2Client.getRequestHeaders()
-				.then(res => res);
-			console.log(accessToken);
-			/*var transporter = mail.createTransport({
+			var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
 					type: "OAuth2",
@@ -64,13 +66,9 @@ router.post('/', function(req, res, next) {
 					console.log(err);
 				}
 				res.send("success");
-			});*/
+			});
 		}
 	});
-});
-
-async function awaitPost(req, res, next){
-
 }
 
 module.exports = router;
