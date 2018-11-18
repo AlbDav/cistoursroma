@@ -58,7 +58,6 @@ async function awaitPost(req, res, next){
 					refreshToken: process.env.GMAIL_REFRESH,
 					accessToken: authHeaders
 				}
-				headers: authHeaders
 			});
 			var mailOptions = {
 				from: process.env.GMAIL_USER,
