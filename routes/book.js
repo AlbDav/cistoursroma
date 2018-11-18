@@ -41,13 +41,13 @@ async function awaitPost(req, res, next){
 	console.log(lastName);
 	console.log(email);
 	console.log(phone);
+			var authHeaders = await oauth2Client.getRequestHeaders();
 	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, email, paid) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [id, qt, date, info, token, email, paid], (err, result) => {
 		if(err){
 			console.log(err);
 		}
 		else{
 			var payment_id = result.rows[0].payment_id;
-			var authHeaders = await oauth2Client.getRequestHeaders();
 			var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
