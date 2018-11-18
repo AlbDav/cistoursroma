@@ -23,10 +23,6 @@ const pool = new Pool({
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-	awaitPost(req, res, next);
-});
-
-async function awaitPost(req, res, next){
 	var id = req.body.id;
 	var firstName = req.body.firstName;
 	var lastName = req.body.lastName;
@@ -47,8 +43,10 @@ async function awaitPost(req, res, next){
 		}
 		else{
 			var payment_id = result.rows[0].payment_id;
-			var authHeaders = await oauth2Client.getRequestHeaders();
-			var transporter = mail.createTransport({
+//			var accessToken = oauth2Client.refreshAccessToken()
+//				.then(res => res.credentials.access_token);
+	var authHeaders = await oauth2Client.getRequestHeaders();
+			/*var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
 					type: "OAuth2",
@@ -56,8 +54,8 @@ async function awaitPost(req, res, next){
 					clientId: process.env.GMAIL_ID,
 					clientSecret: process.env.GMAIL_SECRET,
 					refreshToken: process.env.GMAIL_REFRESH,
+					accessToken: accessToken
 				}
-				headers: authHeaders
 			});
 			var mailOptions = {
 				from: process.env.GMAIL_USER,
@@ -70,9 +68,14 @@ async function awaitPost(req, res, next){
 					console.log(err);
 				}
 				res.send("success");
-			});
+			});*/
 		}
 	});
+});
+
+async function awaitPost(){
+	var authHeaders = await oauth2Client.getRequestHeaders();
+	console.log(authHeaders);
 }
 
 module.exports = router;
