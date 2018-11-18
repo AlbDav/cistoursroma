@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
 			var payment_id = result.rows[0].payment_id;
 //			var accessToken = oauth2Client.refreshAccessToken()
 //				.then(res => res.credentials.access_token);
-			temp();
+	var authHeaders = await oauth2Client.getRequestHeaders();
 			/*var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
