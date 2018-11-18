@@ -52,7 +52,7 @@ router.get('/', function(req, res, next) {
 							}
 							else{
 								var accessToken = oauth2Client.getRequestHeaders();
-								var transporter = mail.createTransport({11
+								var transporter = mail.createTransport({
 									service: 'gmail',
 									auth: {
 										type: "OAuth2",
