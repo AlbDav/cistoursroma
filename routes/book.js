@@ -46,7 +46,7 @@ router.post('/', function(req, res, next) {
 //			var accessToken = oauth2Client.refreshAccessToken()
 //				.then(res => res.credentials.access_token);
 			var authHeaders = oauth2Client.getRequestHeaders();
-			conosole.log(authHeaders);
+			console.log(authHeaders);
 			/*var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
