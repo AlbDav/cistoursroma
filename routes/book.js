@@ -37,11 +37,7 @@ async function awaitPost(req, res, next){
 	var info = req.body.info;
 	var token = rand_str.generate();
 	var paid = 0;
-	console.log(firstName);
-	console.log(lastName);
-	console.log(email);
-	console.log(phone);
-			var authHeaders = await oauth2Client.getRequestHeaders();
+	var accessToken = await oauth2Client.getRequestHeaders();
 	pool.query('INSERT INTO payments(product_id, quantity, tour_date, info, book_token, email, paid) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *', [id, qt, date, info, token, email, paid], (err, result) => {
 		if(err){
 			console.log(err);
@@ -56,7 +52,7 @@ async function awaitPost(req, res, next){
 					clientId: process.env.GMAIL_ID,
 					clientSecret: process.env.GMAIL_SECRET,
 					refreshToken: process.env.GMAIL_REFRESH,
-					accessToken: authHeaders
+					accessToken: accessToken
 				}
 			});
 			var mailOptions = {
