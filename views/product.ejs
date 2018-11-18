@@ -12,10 +12,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script src="/javascripts/book.js"></script>
 		<script>
+			var hours;
 			$(function(){
 				$("#date").datepicker();
-				var hours = <%- JSON.stringify(hours) %>;
-				console.log(hours);
+				hours = <%- JSON.stringify(hours) %>;
 			});
 			var changeHours = function(){
 				var newHours = '<option disabled selected>-- select hour --</option>';
@@ -24,7 +24,7 @@
 					newHours = newHours + '<option>' + hours[lang][i] + '</option>';
 				}
 				$('#hours').html(newHours);
-			}
+			};
 		</script>
 	</head>
 	<body>
