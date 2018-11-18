@@ -40,8 +40,7 @@ router.post('/', function(req, res, next) {
 		else{
 			var payment_id = result.rows[0].payment_id;
 			var accessToken = oauth2Client.getRequestHeaders()
-				.then(res => return res);
-			console.log(accessToken);
+				.then(res => res);
 			var transporter = mail.createTransport({
 				service: 'gmail',
 				auth: {
@@ -53,6 +52,7 @@ router.post('/', function(req, res, next) {
 					accessToken: accessToken
 				}
 			});
+			console.log(accessToken);
 			var mailOptions = {
 				from: process.env.GMAIL_USER,
 				to: email,
