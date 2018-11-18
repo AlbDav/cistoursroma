@@ -13,6 +13,7 @@ function sub(id){
 	}
 	$("#curr_price").html(sum + "&euro;");
 }
+
 function add(id){
 	var currVal = parseInt($("#opt" +id).val());
 	$("#opt" + id).val(currVal + 1);
@@ -26,6 +27,16 @@ function add(id){
 	}
 	$("#curr_price").html(sum + "&euro;");
 }
+
+function changeHours(){
+	var newHours = '<option disabled selected>-- select hour --</option>';
+	var lang = $('#lang').val();
+	for(i = 0; i < hours[lang].length; i++){
+	        newHours = newHours + '<option>' + hours[lang][i] + '</option>';
+	}
+	$('#hours').html(newHours);
+}
+
 function book(id){
 	var valid = true;
 	if($("#first_name").val().length == 0){
@@ -46,6 +57,9 @@ function book(id){
 	}
 	if($("#date").val().length == 0){
 		$("#date").addClass("invalid");
+		valid = false;
+	}
+	if($("#hours").val() == null){
 		valid = false;
 	}
 	if(valid){

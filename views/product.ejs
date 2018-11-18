@@ -17,14 +17,6 @@
 				$("#date").datepicker();
 				hours = <%- JSON.stringify(hours) %>;
 			});
-			var changeHours = function(){
-				var newHours = '<option disabled selected>-- select hour --</option>';
-				var lang = $('#lang').val();
-				for(i = 0; i < hours[lang].length; i++){
-					newHours = newHours + '<option>' + hours[lang][i] + '</option>';
-				}
-				$('#hours').html(newHours);
-			};
 		</script>
 	</head>
 	<body>
